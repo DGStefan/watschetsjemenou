@@ -138,7 +138,9 @@ instances "sticky sessions" nodig, en dat wil je nu niet.
 
 ## Moeilijkheidsgraden
 
-Er zijn twee woordenlijsten, te kiezen in de wachtkamer bij elke nieuwe ronde:
+Er zijn twee woordenlijsten, te kiezen in de wachtkamer. De keuze is **gedeeld**:
+iedereen in de lobby ziet dezelfde instelling, iedereen mag 'm wisselen, en hij
+blijft tussen potjes door onthouden.
 
 - `data/eenvoudig.json` — gewone, goed tekenbare woorden.
 - `data/geavanceerd.json` — samenstellingen en abstracte woorden. Lastiger te

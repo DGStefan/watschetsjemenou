@@ -66,13 +66,22 @@ export class SocketServer {
       this.io.to(code).emit("waiting", r.waitingPayload());
     });
 
-    socket.on("start", ({ difficulty }) => {
+    socket.on("setDifficulty", ({ difficulty }) => {
       const code = socket.data.room;
       if (!code) return;
       const r = this.rooms.get(code);
+      if (!r) return;
       // Veiligheidsklep: val terug op "eenvoudig" bij een onbekende waarde.
       const safe = difficulty === "geavanceerd" ? "geavanceerd" : "eenvoudig";
-      r?.startGame(this.emitterFor(code), safe);
+      r.setDifficulty(safe);
+      // Iedereen in de lobby ziet meteen dezelfde keuze.
+      this.io.to(code).emit("waiting", r.waitingPayload());
+    });
+
+    socket.on("start", () => {
+      const code = socket.data.room;
+      if (!code) return;
+      this.rooms.get(code)?.startGame(this.emitterFor(code));
     });
 
     socket.on("submit", ({ value }) => {
@@ -81,11 +90,14 @@ export class SocketServer {
       this.rooms.get(code)?.submit(socket.id, value);
     });
 
+    // "Terug naar de lobby" vanaf het onthullingsscherm. Mag een lopend potje
+    // niet onderbreken; de spelers die nog kijken laten we met rust (de client
+    // blijft op de onthulling tot ze zelf teruggaan).
     socket.on("newgame", () => {
       const code = socket.data.room;
       if (!code) return;
       const r = this.rooms.get(code);
-      if (!r) return;
+      if (!r || r.status === "playing") return;
       r.resetToWaiting();
       this.io.to(code).emit("waiting", r.waitingPayload());
     });

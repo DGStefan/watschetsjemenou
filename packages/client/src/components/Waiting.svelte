@@ -1,11 +1,10 @@
 <script lang="ts">
-  import type { Difficulty } from "@krabbelketen/shared";
   import { game } from "../stores";
   import { actions } from "../connection";
 
-  let difficulty: Difficulty = "eenvoudig";
-
   $: waiting = $game.waiting;
+  // De moeilijkheid is gedeeld: iedereen in de lobby ziet dezelfde keuze.
+  $: difficulty = waiting?.difficulty ?? "eenvoudig";
 </script>
 
 <div class="card">
@@ -20,23 +19,23 @@
 
   <p class="status">
     {#if waiting?.canStart}
-      {waiting.players.length} spelers — klaar om te starten!
+      {waiting.players.length} spelers in de lobby — klaar om te starten!
     {:else}
       Wachten op spelers… (minimaal {waiting?.minPlayers ?? 2})
     {/if}
   </p>
 
-  <span class="diff-label">Moeilijkheid</span>
+  <span class="diff-label">Moeilijkheid (voor iedereen)</span>
   <div class="diff-toggle">
     <button
       class:active={difficulty === "eenvoudig"}
-      on:click={() => (difficulty = "eenvoudig")}
+      on:click={() => actions.setDifficulty("eenvoudig")}
     >
       Eenvoudig
     </button>
     <button
       class:active={difficulty === "geavanceerd"}
-      on:click={() => (difficulty = "geavanceerd")}
+      on:click={() => actions.setDifficulty("geavanceerd")}
     >
       Geavanceerd
     </button>
@@ -50,11 +49,7 @@
     {/if}
   </p>
 
-  <button
-    class="cta"
-    on:click={() => actions.start(difficulty)}
-    disabled={!waiting?.canStart}
-  >
+  <button class="cta" on:click={actions.start} disabled={!waiting?.canStart}>
     Start het potje
   </button>
 </div>

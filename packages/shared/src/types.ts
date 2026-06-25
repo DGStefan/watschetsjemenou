@@ -28,6 +28,7 @@ export interface WaitingPayload {
   players: string[];
   minPlayers: number;
   canStart: boolean;
+  difficulty: Difficulty; // de gedeelde keuze voor de hele lobby
 }
 
 export interface PassingPayload {

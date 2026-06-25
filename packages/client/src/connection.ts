@@ -19,7 +19,13 @@ socket.on("joined", ({ room }) =>
   game.update((s) => ({ ...s, room, screen: "waiting", info: "" })),
 );
 socket.on("waiting", (waiting) =>
-  game.update((s) => ({ ...s, screen: "waiting", waiting })),
+  game.update((s) => ({
+    ...s,
+    waiting,
+    // Blijf rustig op het onthullingsscherm tot je zélf naar de lobby gaat —
+    // ook als iemand anders al terug is of de moeilijkheid wijzigt.
+    screen: s.screen === "reveal" ? "reveal" : "waiting",
+  })),
 );
 socket.on("phase", (phase) =>
   game.update((s) => ({ ...s, screen: "phase", phase })),
@@ -38,7 +44,13 @@ export const actions = {
     lastJoin = { name, room };
     socket.emit("join", { name, room });
   },
-  start: (difficulty: Difficulty) => socket.emit("start", { difficulty }),
+  setDifficulty: (difficulty: Difficulty) =>
+    socket.emit("setDifficulty", { difficulty }),
+  start: () => socket.emit("start"),
   submit: (value: string) => socket.emit("submit", { value }),
-  newgame: () => socket.emit("newgame"),
+  // Alleen jíj gaat terug naar de lobby; de anderen blijven op de onthulling.
+  backToLobby: () => {
+    socket.emit("newgame");
+    game.update((s) => ({ ...s, screen: "waiting" }));
+  },
 };

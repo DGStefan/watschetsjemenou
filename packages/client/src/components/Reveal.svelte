@@ -57,7 +57,8 @@
     </div>
   {/each}
 
-  <button on:click={actions.newgame}>Nieuw potje</button>
+  <button on:click={actions.backToLobby}>Terug naar de lobby</button>
+  <p class="linger">De anderen blijven rustig kijken tot ze zelf teruggaan.</p>
 </div>
 
 <style>
@@ -99,4 +100,5 @@
   .match-exact { background: #c0dd97; color: #27500a; }
   .match-close { background: #fac775; color: #633806; }
   .match-wrong { background: #f7c1c1; color: #791f1f; }
+  .linger { font-size: 0.8rem; color: #51607d; margin: 8px 0 0; }
 </style>

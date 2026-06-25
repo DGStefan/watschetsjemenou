@@ -12,6 +12,8 @@ import type {
   SubmitPayload,
 } from "./types";
 
+// StartPayload wordt nu gebruikt om de (gedeelde) moeilijkheid te zetten.
+
 /** Events die de server naar de client stuurt. */
 export interface ServerToClientEvents {
   joined: (payload: JoinedPayload) => void;
@@ -25,7 +27,9 @@ export interface ServerToClientEvents {
 /** Events die de client naar de server stuurt. */
 export interface ClientToServerEvents {
   join: (payload: JoinPayload) => void;
-  start: (payload: StartPayload) => void;
+  // Kies de (gedeelde) moeilijkheid voor de hele lobby.
+  setDifficulty: (payload: StartPayload) => void;
+  start: () => void;
   submit: (payload: SubmitPayload) => void;
   newgame: () => void;
 }

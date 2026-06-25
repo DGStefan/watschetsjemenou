@@ -12,8 +12,15 @@ export class Room {
   private game: Game | null = null;
   // Lopend toernooi-totaal per speler-id, blijft staan zolang de lobby bestaat.
   private totals = new Map<string, number>();
+  // Gedeelde moeilijkheid voor de hele lobby (blijft tussen potjes onthouden).
+  private difficulty: Difficulty = "eenvoudig";
 
   constructor(public readonly code: string) {}
+
+  setDifficulty(difficulty: Difficulty): void {
+    if (this.status !== "waiting") return;
+    this.difficulty = difficulty;
+  }
 
   addPlayer(id: string, name: string): Player {
     const player = new Player(id, name);
@@ -46,14 +53,15 @@ export class Room {
       players: this.players.map((p) => p.name),
       minPlayers: config.minPlayers,
       canStart: this.canStart,
+      difficulty: this.difficulty,
     };
   }
 
-  startGame(emitter: GameEmitter, difficulty: Difficulty): void {
+  startGame(emitter: GameEmitter): void {
     if (this.status === "playing" || !this.canStart) return;
     this.status = "playing";
     // Snapshot van de huidige spelers; de Game houdt deze referenties vast.
-    this.game = new Game([...this.players], emitter, difficulty, (chains, roundScores) => {
+    this.game = new Game([...this.players], emitter, this.difficulty, (chains, roundScores) => {
       // Tel de ronde-punten op bij het lobby-totaal.
       for (const rs of roundScores) {
         this.totals.set(rs.id, (this.totals.get(rs.id) ?? 0) + rs.points);
