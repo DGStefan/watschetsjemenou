@@ -1,0 +1,23 @@
+{
+  "name": "wattekenjemenou",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Doorgeef-tekenspel (teken -> raad -> teken). TypeScript monorepo: shared + server + Svelte-client.",
+  "workspaces": [
+    "packages/shared",
+    "packages/server",
+    "packages/client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,CLIENT -c blue,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --workspace @wattekenjemenou/server",
+    "dev:client": "npm run dev --workspace @wattekenjemenou/client",
+    "build": "npm run build --workspace @wattekenjemenou/client && npm run build --workspace @wattekenjemenou/server",
+    "start": "node packages/server/dist/index.js",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

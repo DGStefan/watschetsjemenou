@@ -1,0 +1,13 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.*
+
+# Editor / IDE
+.idea/
+.vscode/
