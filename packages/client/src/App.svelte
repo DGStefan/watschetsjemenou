@@ -9,7 +9,7 @@
   import Reveal from "./components/Reveal.svelte";
 </script>
 
-<h1>wat<span class="hi">schets</span>jemenou ✏️</h1>
+<h1>Krabbel<span class="hi">keten</span> ✏️</h1>
 
 {#if $game.screen === "lobby"}
   <Lobby />

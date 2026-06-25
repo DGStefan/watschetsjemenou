@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Difficulty } from "@wattekenjemenou/shared";
+  import type { Difficulty } from "@krabbelketen/shared";
   import { game } from "../stores";
   import { actions } from "../connection";
 

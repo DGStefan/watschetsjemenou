@@ -1,7 +1,7 @@
 <script lang="ts">
   import { game } from "../stores";
   import { actions } from "../connection";
-  import type { MatchResult } from "@wattekenjemenou/shared";
+  import type { MatchResult } from "@krabbelketen/shared";
 
   $: chains = $game.reveal?.chains ?? [];
   $: scores = $game.reveal?.scores ?? [];

@@ -1,4 +1,4 @@
-import type { Difficulty, ScoreRow, WaitingPayload } from "@wattekenjemenou/shared";
+import type { Difficulty, ScoreRow, WaitingPayload } from "@krabbelketen/shared";
 import { Player } from "./Player";
 import { Game, type GameEmitter } from "./Game";
 import { config } from "./config";

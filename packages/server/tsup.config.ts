@@ -9,5 +9,5 @@ export default defineConfig({
   clean: true,
   // De shared-package is TypeScript-broncode; die bundelen we mee.
   // express/socket.io blijven external (komen uit node_modules).
-  noExternal: [/@wattekenjemenou\/shared/],
+  noExternal: [/@krabbelketen\/shared/],
 });

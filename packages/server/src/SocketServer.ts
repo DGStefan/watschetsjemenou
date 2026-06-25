@@ -2,7 +2,7 @@ import type { Server, Socket } from "socket.io";
 import type {
   ClientToServerEvents,
   ServerToClientEvents,
-} from "@wattekenjemenou/shared";
+} from "@krabbelketen/shared";
 import { RoomManager } from "./RoomManager";
 import type { GameEmitter } from "./Game";
 

@@ -1,5 +1,5 @@
 {
-  "name": "@wattekenjemenou/client",
+  "name": "@krabbelketen/client",
   "version": "0.2.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "typecheck": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
-    "@wattekenjemenou/shared": "*",
+    "@krabbelketen/shared": "*",
     "socket.io-client": "^4.7.5"
   },
   "devDependencies": {

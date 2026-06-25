@@ -1,4 +1,4 @@
-import type { MatchResult } from "@wattekenjemenou/shared";
+import type { MatchResult } from "@krabbelketen/shared";
 
 const ARTICLES = new Set(["de", "het", "een"]);
 

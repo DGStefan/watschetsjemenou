@@ -1,5 +1,5 @@
 {
-  "name": "@wattekenjemenou/server",
+  "name": "@krabbelketen/server",
   "version": "0.2.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@wattekenjemenou/shared": "*",
+    "@krabbelketen/shared": "*",
     "express": "^4.19.2",
     "socket.io": "^4.7.5"
   },

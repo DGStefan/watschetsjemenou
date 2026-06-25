@@ -8,7 +8,7 @@ import type {
   RevealChain,
   RevealEntry,
   ScoreRow,
-} from "@wattekenjemenou/shared";
+} from "@krabbelketen/shared";
 import { Player } from "./Player";
 import { dictionary } from "./Dictionary";
 import { matchGuess } from "./matching";

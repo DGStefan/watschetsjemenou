@@ -1,4 +1,4 @@
-import type { Difficulty } from "@wattekenjemenou/shared";
+import type { Difficulty } from "@krabbelketen/shared";
 import { socket } from "./socket";
 import { game } from "./stores";
 

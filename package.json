@@ -1,5 +1,5 @@
 {
-  "name": "wattekenjemenou",
+  "name": "krabbelketen",
   "version": "0.2.0",
   "private": true,
   "type": "module",
@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "dev": "concurrently -k -n SERVER,CLIENT -c blue,magenta \"npm:dev:server\" \"npm:dev:client\"",
-    "dev:server": "npm run dev --workspace @wattekenjemenou/server",
-    "dev:client": "npm run dev --workspace @wattekenjemenou/client",
-    "build": "npm run build --workspace @wattekenjemenou/client && npm run build --workspace @wattekenjemenou/server",
+    "dev:server": "npm run dev --workspace @krabbelketen/server",
+    "dev:client": "npm run dev --workspace @krabbelketen/client",
+    "build": "npm run build --workspace @krabbelketen/client && npm run build --workspace @krabbelketen/server",
     "start": "node packages/server/dist/index.js",
     "typecheck": "npm run typecheck --workspaces --if-present"
   },

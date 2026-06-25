@@ -4,7 +4,7 @@ import type {
   PhasePayload,
   RevealPayload,
   WaitingPayload,
-} from "@wattekenjemenou/shared";
+} from "@krabbelketen/shared";
 
 export type Screen = "lobby" | "waiting" | "phase" | "passing" | "reveal";
 

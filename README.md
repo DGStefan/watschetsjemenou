@@ -1,4 +1,4 @@
-# Wattekenjemenou
+# Krabbelketen
 
 Een doorgeef-tekenspel (teken → raad → teken → raad, en aan het eind kijken hoe
 ver het afdwaalde). TypeScript-monorepo met een Svelte-client en een

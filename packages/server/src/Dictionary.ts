@@ -1,4 +1,4 @@
-import type { Difficulty } from "@wattekenjemenou/shared";
+import type { Difficulty } from "@krabbelketen/shared";
 import easyData from "./data/eenvoudig.json";
 import advancedData from "./data/geavanceerd.json";
 import { normalize } from "./matching";
