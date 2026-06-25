@@ -1,0 +1,818 @@
+[
+  {
+    "word": "accordeon",
+    "aliases": []
+  },
+  {
+    "word": "achtbaan",
+    "aliases": []
+  },
+  {
+    "word": "adventskrans",
+    "aliases": []
+  },
+  {
+    "word": "apenstaartje",
+    "aliases": []
+  },
+  {
+    "word": "bankbiljet",
+    "aliases": []
+  },
+  {
+    "word": "barbecuetang",
+    "aliases": []
+  },
+  {
+    "word": "barometer",
+    "aliases": []
+  },
+  {
+    "word": "bezemsteel",
+    "aliases": []
+  },
+  {
+    "word": "bijenkorf",
+    "aliases": []
+  },
+  {
+    "word": "bladblazer",
+    "aliases": []
+  },
+  {
+    "word": "blikopener",
+    "aliases": []
+  },
+  {
+    "word": "blokkentoren",
+    "aliases": []
+  },
+  {
+    "word": "bobslee",
+    "aliases": []
+  },
+  {
+    "word": "boekenwurm",
+    "aliases": []
+  },
+  {
+    "word": "boodschappentas",
+    "aliases": []
+  },
+  {
+    "word": "boomhut",
+    "aliases": []
+  },
+  {
+    "word": "brandkraan",
+    "aliases": []
+  },
+  {
+    "word": "brekebeen",
+    "aliases": []
+  },
+  {
+    "word": "brievenbus",
+    "aliases": []
+  },
+  {
+    "word": "broodrooster",
+    "aliases": []
+  },
+  {
+    "word": "chaos",
+    "aliases": []
+  },
+  {
+    "word": "creditcard",
+    "aliases": []
+  },
+  {
+    "word": "deegroller",
+    "aliases": []
+  },
+  {
+    "word": "deltavlieger",
+    "aliases": []
+  },
+  {
+    "word": "dinosaurusskelet",
+    "aliases": []
+  },
+  {
+    "word": "dirigentstokje",
+    "aliases": []
+  },
+  {
+    "word": "doedelzak",
+    "aliases": []
+  },
+  {
+    "word": "doodskist",
+    "aliases": []
+  },
+  {
+    "word": "draaimolen",
+    "aliases": []
+  },
+  {
+    "word": "draaiorgel",
+    "aliases": []
+  },
+  {
+    "word": "draaitol",
+    "aliases": []
+  },
+  {
+    "word": "druktemaker",
+    "aliases": []
+  },
+  {
+    "word": "duikboot",
+    "aliases": []
+  },
+  {
+    "word": "duikbril",
+    "aliases": []
+  },
+  {
+    "word": "duizeligheid",
+    "aliases": []
+  },
+  {
+    "word": "dwarsligger",
+    "aliases": []
+  },
+  {
+    "word": "echo",
+    "aliases": []
+  },
+  {
+    "word": "een vis op het droge",
+    "aliases": []
+  },
+  {
+    "word": "eierwekker",
+    "aliases": []
+  },
+  {
+    "word": "erlenmeyer",
+    "aliases": []
+  },
+  {
+    "word": "evenwicht",
+    "aliases": []
+  },
+  {
+    "word": "fata morgana",
+    "aliases": []
+  },
+  {
+    "word": "fossiel",
+    "aliases": []
+  },
+  {
+    "word": "ganzenbord",
+    "aliases": []
+  },
+  {
+    "word": "geduld",
+    "aliases": []
+  },
+  {
+    "word": "geeuw",
+    "aliases": []
+  },
+  {
+    "word": "geiser",
+    "aliases": []
+  },
+  {
+    "word": "geldkist",
+    "aliases": []
+  },
+  {
+    "word": "geluk",
+    "aliases": []
+  },
+  {
+    "word": "gletsjer",
+    "aliases": []
+  },
+  {
+    "word": "grasmaaier",
+    "aliases": []
+  },
+  {
+    "word": "hanenkam",
+    "aliases": []
+  },
+  {
+    "word": "hangmat",
+    "aliases": []
+  },
+  {
+    "word": "heimwee",
+    "aliases": []
+  },
+  {
+    "word": "heksenketel",
+    "aliases": []
+  },
+  {
+    "word": "hik",
+    "aliases": []
+  },
+  {
+    "word": "hondenweer",
+    "aliases": []
+  },
+  {
+    "word": "hoogspanningsmast",
+    "aliases": []
+  },
+  {
+    "word": "hooiberg",
+    "aliases": []
+  },
+  {
+    "word": "ijsbeer op schaats",
+    "aliases": []
+  },
+  {
+    "word": "ijsschots",
+    "aliases": []
+  },
+  {
+    "word": "jaloezie",
+    "aliases": []
+  },
+  {
+    "word": "jojo",
+    "aliases": []
+  },
+  {
+    "word": "kampvuur",
+    "aliases": []
+  },
+  {
+    "word": "kapstok",
+    "aliases": []
+  },
+  {
+    "word": "kat in de zak",
+    "aliases": []
+  },
+  {
+    "word": "kattenkwaad",
+    "aliases": []
+  },
+  {
+    "word": "kerstboom",
+    "aliases": []
+  },
+  {
+    "word": "kettingbotsing",
+    "aliases": []
+  },
+  {
+    "word": "kippenvel",
+    "aliases": []
+  },
+  {
+    "word": "knikkers",
+    "aliases": []
+  },
+  {
+    "word": "koekenpan",
+    "aliases": []
+  },
+  {
+    "word": "koffiezetapparaat",
+    "aliases": []
+  },
+  {
+    "word": "kompas",
+    "aliases": []
+  },
+  {
+    "word": "krater",
+    "aliases": []
+  },
+  {
+    "word": "kriebel",
+    "aliases": []
+  },
+  {
+    "word": "kristallen bol",
+    "aliases": []
+  },
+  {
+    "word": "kurkentrekker",
+    "aliases": []
+  },
+  {
+    "word": "lampion",
+    "aliases": []
+  },
+  {
+    "word": "lantaarnpaal",
+    "aliases": []
+  },
+  {
+    "word": "ligstoel",
+    "aliases": []
+  },
+  {
+    "word": "luchtballon",
+    "aliases": []
+  },
+  {
+    "word": "luchtbed",
+    "aliases": []
+  },
+  {
+    "word": "luchtkasteel",
+    "aliases": []
+  },
+  {
+    "word": "luchtkussen",
+    "aliases": []
+  },
+  {
+    "word": "luchtspiegeling",
+    "aliases": []
+  },
+  {
+    "word": "maanlander",
+    "aliases": []
+  },
+  {
+    "word": "mammoet",
+    "aliases": []
+  },
+  {
+    "word": "microscoop",
+    "aliases": []
+  },
+  {
+    "word": "mierenhoop",
+    "aliases": []
+  },
+  {
+    "word": "molensteen",
+    "aliases": []
+  },
+  {
+    "word": "mondharmonica",
+    "aliases": []
+  },
+  {
+    "word": "muizenissen",
+    "aliases": []
+  },
+  {
+    "word": "nietmachine",
+    "aliases": []
+  },
+  {
+    "word": "nieuwsgierigheid",
+    "aliases": []
+  },
+  {
+    "word": "notenkraker",
+    "aliases": []
+  },
+  {
+    "word": "olifantenpad",
+    "aliases": []
+  },
+  {
+    "word": "oneindigheid",
+    "aliases": []
+  },
+  {
+    "word": "ophaalbrug",
+    "aliases": []
+  },
+  {
+    "word": "optische illusie",
+    "aliases": []
+  },
+  {
+    "word": "paardenstaart",
+    "aliases": []
+  },
+  {
+    "word": "parachute",
+    "aliases": []
+  },
+  {
+    "word": "parallel universum",
+    "aliases": []
+  },
+  {
+    "word": "parasol",
+    "aliases": []
+  },
+  {
+    "word": "pepermolen",
+    "aliases": []
+  },
+  {
+    "word": "perforator",
+    "aliases": []
+  },
+  {
+    "word": "pompoenlampion",
+    "aliases": []
+  },
+  {
+    "word": "pop in doos",
+    "aliases": []
+  },
+  {
+    "word": "puntenslijper",
+    "aliases": []
+  },
+  {
+    "word": "putdeksel",
+    "aliases": []
+  },
+  {
+    "word": "reageerbuis",
+    "aliases": []
+  },
+  {
+    "word": "reddingsboot",
+    "aliases": []
+  },
+  {
+    "word": "regenton",
+    "aliases": []
+  },
+  {
+    "word": "rekenmachine",
+    "aliases": []
+  },
+  {
+    "word": "reuzenrad",
+    "aliases": []
+  },
+  {
+    "word": "ridderhelm",
+    "aliases": []
+  },
+  {
+    "word": "rolkoffer",
+    "aliases": []
+  },
+  {
+    "word": "rolschaats",
+    "aliases": []
+  },
+  {
+    "word": "rotonde",
+    "aliases": []
+  },
+  {
+    "word": "ruimtepak",
+    "aliases": []
+  },
+  {
+    "word": "ruzie",
+    "aliases": []
+  },
+  {
+    "word": "sabeltandtijger",
+    "aliases": []
+  },
+  {
+    "word": "satellietschotel",
+    "aliases": []
+  },
+  {
+    "word": "schaduw",
+    "aliases": []
+  },
+  {
+    "word": "schatkaart",
+    "aliases": []
+  },
+  {
+    "word": "schedel",
+    "aliases": []
+  },
+  {
+    "word": "schommelstoel",
+    "aliases": []
+  },
+  {
+    "word": "skelter",
+    "aliases": []
+  },
+  {
+    "word": "slaapkop",
+    "aliases": []
+  },
+  {
+    "word": "slaapzak",
+    "aliases": []
+  },
+  {
+    "word": "slagroomspuit",
+    "aliases": []
+  },
+  {
+    "word": "sneeuwballengevecht",
+    "aliases": []
+  },
+  {
+    "word": "sneeuwschoen",
+    "aliases": []
+  },
+  {
+    "word": "snelheid",
+    "aliases": []
+  },
+  {
+    "word": "snoeischaar",
+    "aliases": []
+  },
+  {
+    "word": "spaarvarken",
+    "aliases": []
+  },
+  {
+    "word": "spiegelbeeld",
+    "aliases": []
+  },
+  {
+    "word": "spinnenkop",
+    "aliases": []
+  },
+  {
+    "word": "spinnenweb",
+    "aliases": []
+  },
+  {
+    "word": "spook op fiets",
+    "aliases": []
+  },
+  {
+    "word": "spookhuis",
+    "aliases": []
+  },
+  {
+    "word": "springkussen",
+    "aliases": []
+  },
+  {
+    "word": "stadspoort",
+    "aliases": []
+  },
+  {
+    "word": "stalaktiet",
+    "aliases": []
+  },
+  {
+    "word": "stempel",
+    "aliases": []
+  },
+  {
+    "word": "sterrenkijker",
+    "aliases": []
+  },
+  {
+    "word": "stilte",
+    "aliases": []
+  },
+  {
+    "word": "stofzuigerslang",
+    "aliases": []
+  },
+  {
+    "word": "strandstoel",
+    "aliases": []
+  },
+  {
+    "word": "strijkijzer",
+    "aliases": []
+  },
+  {
+    "word": "stroopwafel",
+    "aliases": []
+  },
+  {
+    "word": "stuurman",
+    "aliases": []
+  },
+  {
+    "word": "surfplank",
+    "aliases": []
+  },
+  {
+    "word": "tamboerijn",
+    "aliases": []
+  },
+  {
+    "word": "tandartsstoel",
+    "aliases": []
+  },
+  {
+    "word": "thermometer",
+    "aliases": []
+  },
+  {
+    "word": "tijdmachine",
+    "aliases": []
+  },
+  {
+    "word": "toeval",
+    "aliases": []
+  },
+  {
+    "word": "toverstaf",
+    "aliases": []
+  },
+  {
+    "word": "trekpop",
+    "aliases": []
+  },
+  {
+    "word": "tuinkabouter",
+    "aliases": []
+  },
+  {
+    "word": "vangrail",
+    "aliases": []
+  },
+  {
+    "word": "vergiet",
+    "aliases": []
+  },
+  {
+    "word": "vergrootglas",
+    "aliases": []
+  },
+  {
+    "word": "verkeerslicht",
+    "aliases": []
+  },
+  {
+    "word": "verliefdheid",
+    "aliases": []
+  },
+  {
+    "word": "verrekijker",
+    "aliases": []
+  },
+  {
+    "word": "vleermuisvleugel",
+    "aliases": []
+  },
+  {
+    "word": "vliegend tapijt",
+    "aliases": []
+  },
+  {
+    "word": "vlinderslag",
+    "aliases": []
+  },
+  {
+    "word": "vlinderstrik",
+    "aliases": []
+  },
+  {
+    "word": "vogelhuisje",
+    "aliases": []
+  },
+  {
+    "word": "vogelverschrikker",
+    "aliases": []
+  },
+  {
+    "word": "vriendschap",
+    "aliases": []
+  },
+  {
+    "word": "vrijheid",
+    "aliases": []
+  },
+  {
+    "word": "vuurspuwer",
+    "aliases": []
+  },
+  {
+    "word": "vuurtorenwachter",
+    "aliases": []
+  },
+  {
+    "word": "wafelijzer",
+    "aliases": []
+  },
+  {
+    "word": "wafelkraam",
+    "aliases": []
+  },
+  {
+    "word": "wasknijper",
+    "aliases": []
+  },
+  {
+    "word": "waterglijbaan",
+    "aliases": []
+  },
+  {
+    "word": "watermolen",
+    "aliases": []
+  },
+  {
+    "word": "weegschaal",
+    "aliases": []
+  },
+  {
+    "word": "weerhaan",
+    "aliases": []
+  },
+  {
+    "word": "weerspiegeling",
+    "aliases": []
+  },
+  {
+    "word": "weerstation",
+    "aliases": []
+  },
+  {
+    "word": "wereldbol",
+    "aliases": []
+  },
+  {
+    "word": "wildebras",
+    "aliases": []
+  },
+  {
+    "word": "windmolentje",
+    "aliases": []
+  },
+  {
+    "word": "windturbine",
+    "aliases": []
+  },
+  {
+    "word": "windvaan",
+    "aliases": []
+  },
+  {
+    "word": "winkelwagen",
+    "aliases": []
+  },
+  {
+    "word": "wormgat",
+    "aliases": []
+  },
+  {
+    "word": "xylofoon",
+    "aliases": []
+  },
+  {
+    "word": "zandkasteel",
+    "aliases": []
+  },
+  {
+    "word": "zebrapad",
+    "aliases": []
+  },
+  {
+    "word": "zeepkist",
+    "aliases": []
+  },
+  {
+    "word": "zonaanbidder",
+    "aliases": []
+  },
+  {
+    "word": "zonnebrandcrème",
+    "aliases": []
+  },
+  {
+    "word": "zonnepaneel",
+    "aliases": []
+  },
+  {
+    "word": "zonnewijzer",
+    "aliases": []
+  },
+  {
+    "word": "zwaartekracht",
+    "aliases": []
+  },
+  {
+    "word": "zwart gat",
+    "aliases": []
+  },
+  {
+    "word": "zwemband",
+    "aliases": []
+  }
+]

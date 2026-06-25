@@ -8,6 +8,7 @@ import type {
   PhasePayload,
   PassingPayload,
   RevealPayload,
+  StartPayload,
   SubmitPayload,
 } from "./types";
 
@@ -24,7 +25,7 @@ export interface ServerToClientEvents {
 /** Events die de client naar de server stuurt. */
 export interface ClientToServerEvents {
   join: (payload: JoinPayload) => void;
-  start: () => void;
+  start: (payload: StartPayload) => void;
   submit: (payload: SubmitPayload) => void;
   newgame: () => void;
 }

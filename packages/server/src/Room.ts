@@ -1,4 +1,4 @@
-import type { WaitingPayload } from "@wattekenjemenou/shared";
+import type { Difficulty, ScoreRow, WaitingPayload } from "@wattekenjemenou/shared";
 import { Player } from "./Player";
 import { Game, type GameEmitter } from "./Game";
 import { config } from "./config";
@@ -10,6 +10,8 @@ export class Room {
   status: RoomStatus = "waiting";
   private players: Player[] = [];
   private game: Game | null = null;
+  // Lopend toernooi-totaal per speler-id, blijft staan zolang de lobby bestaat.
+  private totals = new Map<string, number>();
 
   constructor(public readonly code: string) {}
 
@@ -47,12 +49,24 @@ export class Room {
     };
   }
 
-  startGame(emitter: GameEmitter): void {
+  startGame(emitter: GameEmitter, difficulty: Difficulty): void {
     if (this.status === "playing" || !this.canStart) return;
     this.status = "playing";
     // Snapshot van de huidige spelers; de Game houdt deze referenties vast.
-    this.game = new Game([...this.players], emitter, () => {
+    this.game = new Game([...this.players], emitter, difficulty, (chains, roundScores) => {
+      // Tel de ronde-punten op bij het lobby-totaal.
+      for (const rs of roundScores) {
+        this.totals.set(rs.id, (this.totals.get(rs.id) ?? 0) + rs.points);
+      }
+      const scores: ScoreRow[] = roundScores
+        .map((rs) => ({
+          name: rs.name,
+          points: this.totals.get(rs.id) ?? rs.points,
+          roundPoints: rs.points,
+        }))
+        .sort((a, b) => b.points - a.points);
       this.status = "reveal";
+      emitter.sendReveal(chains, scores);
     });
     this.game.start();
   }

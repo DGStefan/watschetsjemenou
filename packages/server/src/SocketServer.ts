@@ -66,11 +66,13 @@ export class SocketServer {
       this.io.to(code).emit("waiting", r.waitingPayload());
     });
 
-    socket.on("start", () => {
+    socket.on("start", ({ difficulty }) => {
       const code = socket.data.room;
       if (!code) return;
       const r = this.rooms.get(code);
-      r?.startGame(this.emitterFor(code));
+      // Veiligheidsklep: val terug op "eenvoudig" bij een onbekende waarde.
+      const safe = difficulty === "geavanceerd" ? "geavanceerd" : "eenvoudig";
+      r?.startGame(this.emitterFor(code), safe);
     });
 
     socket.on("submit", ({ value }) => {

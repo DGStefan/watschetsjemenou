@@ -1,4 +1,6 @@
-import wordData from "./data/words.json";
+import type { Difficulty } from "@wattekenjemenou/shared";
+import easyData from "./data/eenvoudig.json";
+import advancedData from "./data/geavanceerd.json";
 import { normalize } from "./matching";
 
 export interface WordEntry {
@@ -7,28 +9,31 @@ export interface WordEntry {
 }
 
 /**
- * De woordenlijst, geladen uit data/words.json.
- * Nieuwe woorden toevoegen? Voeg een regel toe aan dat JSON-bestand:
+ * De woordenlijsten, geladen uit data/eenvoudig.json en data/geavanceerd.json.
+ * Nieuwe woorden toevoegen? Voeg een regel toe aan het juiste JSON-bestand:
  *   { "word": "kameel", "aliases": ["dromedaris"] }
  */
 class DictionaryImpl {
-  private readonly entries: WordEntry[];
+  private readonly sets: Record<Difficulty, WordEntry[]>;
+  // Aliassen van álle woorden (beide sets), voor de gok-controle.
   private readonly aliasByWord = new Map<string, string[]>();
 
-  constructor(entries: WordEntry[]) {
-    this.entries = entries;
-    for (const entry of entries) {
-      this.aliasByWord.set(normalize(entry.word), entry.aliases ?? []);
+  constructor(sets: Record<Difficulty, WordEntry[]>) {
+    this.sets = sets;
+    for (const list of Object.values(sets)) {
+      for (const entry of list) {
+        this.aliasByWord.set(normalize(entry.word), entry.aliases ?? []);
+      }
     }
   }
 
-  get size(): number {
-    return this.entries.length;
+  size(difficulty: Difficulty): number {
+    return this.sets[difficulty].length;
   }
 
   /** Geef n (zo veel mogelijk verschillende) willekeurige woorden terug. */
-  pickWords(n: number): string[] {
-    const shuffled = [...this.entries];
+  pickWords(difficulty: Difficulty, n: number): string[] {
+    const shuffled = [...this.sets[difficulty]];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -38,10 +43,13 @@ class DictionaryImpl {
     return out;
   }
 
-  /** Aliassen van een bekend woord (leeg als het woord niet in de lijst staat). */
+  /** Aliassen van een bekend woord (leeg als het woord niet voorkomt). */
   aliasesFor(word: string): string[] {
     return this.aliasByWord.get(normalize(word)) ?? [];
   }
 }
 
-export const dictionary = new DictionaryImpl(wordData as WordEntry[]);
+export const dictionary = new DictionaryImpl({
+  eenvoudig: easyData as WordEntry[],
+  geavanceerd: advancedData as WordEntry[],
+});

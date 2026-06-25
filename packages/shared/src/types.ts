@@ -4,6 +4,13 @@
 // eigen woord en geeft het door (zonder zelf te tekenen).
 export type PhaseType = "draw" | "guess" | "relay";
 
+/** Moeilijkheidsgraad: bepaalt uit welke woordenlijst er getrokken wordt. */
+export type Difficulty = "eenvoudig" | "geavanceerd";
+
+export interface StartPayload {
+  difficulty: Difficulty;
+}
+
 /** Wat een speler aan het begin van een fase te zien krijgt. */
 export type Prompt =
   | { kind: "word"; text: string } // teken dit woord
@@ -46,7 +53,8 @@ export interface RevealChain {
 
 export interface ScoreRow {
   name: string;
-  points: number;
+  points: number; // totaal over de hele lobby
+  roundPoints: number; // punten in de laatste ronde (de "+X")
 }
 
 export interface RevealPayload {

@@ -47,7 +47,8 @@ packages/
 │       ├── Player.ts        één speler
 │       ├── Dictionary.ts    laadt de woordenlijst
 │       ├── matching.ts      gok-controle (exact/alias/tikfout)
-│       ├── data/words.json  de woorden + aliassen
+│       ├── data/eenvoudig.json   woorden (eenvoudig) + aliassen
+│       ├── data/geavanceerd.json woorden (geavanceerd: samenstellingen e.d.)
 │       └── config.ts        instellingen (env-overschrijfbaar)
 └── client/   Svelte + Vite:
     └── src/
@@ -135,10 +136,18 @@ instances "sticky sessions" nodig, en dat wil je nu niet.
 > Let op: de spelstaat zit in het geheugen. Bij een nieuwe deploy of herstart
 > zijn lopende potjes weg — voor een hobby-spel prima.
 
+## Moeilijkheidsgraden
+
+Er zijn twee woordenlijsten, te kiezen in de wachtkamer bij elke nieuwe ronde:
+
+- `data/eenvoudig.json` — gewone, goed tekenbare woorden.
+- `data/geavanceerd.json` — samenstellingen en abstracte woorden. Lastiger te
+  tekenen, dus meer kans dat de boodschap onderweg hilarisch ontspoort (juist de
+  lol van het spel).
+
 ## Woorden toevoegen
 
-De woordenlijst staat in `packages/server/src/data/words.json`. Een regel
-toevoegen is genoeg:
+Voeg een regel toe aan het juiste JSON-bestand in `packages/server/src/data/`:
 
 ```json
 { "word": "kameel", "aliases": ["dromedaris"] }
@@ -167,6 +176,10 @@ Punten worden zo verdeeld:
 "Goed" betekent exact, via een alias, of met een kleine tikfout ("bijna").
 De puntenaantallen staan bij elkaar in `config.ts` (`points`) en de berekening
 in `Game.ts` (methode `reveal`), dus makkelijk aan te passen.
+
+De punten tellen door zolang de lobby bestaat: na elk potje wordt de winst
+opgeteld bij het lopende totaal. Het scorebord toont het totaal met de winst van
+de laatste ronde erbij (in het groen, bijv. `16 pt +8`).
 
 ## Volgende bouwstappen (ideeën)
 

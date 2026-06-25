@@ -23,7 +23,12 @@
       {#each scores as row, i}
         <div class="score-row">
           <span>{i === 0 ? "🏆" : `${i + 1}.`} {row.name}</span>
-          <strong>{row.points} pt</strong>
+          <span class="score-right">
+            <strong>{row.points} pt</strong>
+            {#if row.roundPoints > 0}
+              <span class="delta">+{row.roundPoints}</span>
+            {/if}
+          </span>
         </div>
       {/each}
     </div>
@@ -72,6 +77,7 @@
     font-weight: 700;
     color: #1f2d4d;
   }
+  .score-right { display: flex; align-items: center; gap: 8px; }
   .score-row strong {
     background: #6c5ce7;
     color: #fff;
@@ -80,6 +86,7 @@
     padding: 1px 10px;
     font-size: 0.85rem;
   }
+  .delta { color: #1e9e5e; font-weight: 800; font-size: 0.85rem; }
   .match {
     font-size: 0.72rem;
     font-weight: 800;

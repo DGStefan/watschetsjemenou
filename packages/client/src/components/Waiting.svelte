@@ -1,6 +1,9 @@
 <script lang="ts">
+  import type { Difficulty } from "@wattekenjemenou/shared";
   import { game } from "../stores";
   import { actions } from "../connection";
+
+  let difficulty: Difficulty = "eenvoudig";
 
   $: waiting = $game.waiting;
 </script>
@@ -23,7 +26,66 @@
     {/if}
   </p>
 
-  <button class="cta" on:click={actions.start} disabled={!waiting?.canStart}>
+  <span class="diff-label">Moeilijkheid</span>
+  <div class="diff-toggle">
+    <button
+      class:active={difficulty === "eenvoudig"}
+      on:click={() => (difficulty = "eenvoudig")}
+    >
+      Eenvoudig
+    </button>
+    <button
+      class:active={difficulty === "geavanceerd"}
+      on:click={() => (difficulty = "geavanceerd")}
+    >
+      Geavanceerd
+    </button>
+  </div>
+  <p class="diff-hint">
+    {#if difficulty === "eenvoudig"}
+      Gewone, goed tekenbare woorden.
+    {:else}
+      Samenstellingen en abstracte woorden — meer kans op hilarische
+      misverstanden!
+    {/if}
+  </p>
+
+  <button
+    class="cta"
+    on:click={() => actions.start(difficulty)}
+    disabled={!waiting?.canStart}
+  >
     Start het potje
   </button>
 </div>
+
+<style>
+  .diff-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #51607d;
+    margin: 14px 0 6px;
+  }
+  .diff-toggle {
+    display: flex;
+    gap: 10px;
+  }
+  .diff-toggle button {
+    flex: 1;
+    margin-top: 0;
+    background: #fff;
+    color: #1f2d4d;
+    box-shadow: 3px 3px 0 #1f2d4d;
+  }
+  .diff-toggle button.active {
+    background: #6c5ce7;
+    color: #fff;
+  }
+  .diff-hint {
+    font-size: 0.85rem;
+    color: #51607d;
+    margin: 8px 0 0;
+    min-height: 1.2em;
+  }
+</style>

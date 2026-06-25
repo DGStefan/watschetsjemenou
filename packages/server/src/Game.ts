@@ -1,4 +1,5 @@
 import type {
+  Difficulty,
   EntryType,
   MatchResult,
   PhasePayload,
@@ -34,6 +35,13 @@ interface Chain {
   entries: Entry[];
 }
 
+/** De punten die één speler in één potje verdiende. */
+export interface RoundScore {
+  id: string;
+  name: string;
+  points: number;
+}
+
 /**
  * De fase-motor van één potje.
  *
@@ -51,11 +59,17 @@ export class Game {
   constructor(
     private readonly players: Player[],
     private readonly emitter: GameEmitter,
-    private readonly onFinished: () => void,
+    private readonly difficulty: Difficulty,
+    // Wordt aangeroepen als het potje klaar is; de Room telt de punten
+    // op bij het lobby-totaal en stuurt de onthulling.
+    private readonly onComplete: (
+      chains: RevealChain[],
+      roundScores: RoundScore[],
+    ) => void,
   ) {}
 
   start(): void {
-    const words = dictionary.pickWords(this.players.length);
+    const words = dictionary.pickWords(this.difficulty, this.players.length);
     this.chains = this.players.map((owner, i) => ({
       owner,
       entries: [{ type: "word", value: words[i], by: null }],
@@ -151,10 +165,13 @@ export class Game {
   }
 
   private reveal(): void {
-    const points = new Map<string, number>();
-    for (const player of this.players) points.set(player.name, 0);
-    const add = (name: string, n: number) =>
-      points.set(name, (points.get(name) ?? 0) + n);
+    // Punten per speler-id (zodat de Room ze over potjes heen kan optellen).
+    const pointsById = new Map<string, number>();
+    for (const player of this.players) pointsById.set(player.id, 0);
+    const add = (player: Player | null, n: number) => {
+      if (!player) return;
+      pointsById.set(player.id, (pointsById.get(player.id) ?? 0) + n);
+    };
 
     const isGood = (r: MatchResult) => r === "exact" || r === "close";
 
@@ -179,8 +196,8 @@ export class Game {
             if (isGood(outcome.result)) {
               // Tekening goed geraden door de speler na je:
               // de tekenaar én de rader krijgen punten.
-              if (drawer) add(drawer.name, config.points.correctGuessDrawer);
-              if (entry.by) add(entry.by.name, config.points.correctGuessGuesser);
+              add(drawer, config.points.correctGuessDrawer);
+              add(entry.by, config.points.correctGuessGuesser);
             }
           }
         }
@@ -202,19 +219,20 @@ export class Game {
           dictionary.aliasesFor(seed.value),
         );
         if (isGood(survived.result)) {
-          add(chain.owner.name, config.points.wordSurvived);
+          add(chain.owner, config.points.wordSurvived);
         }
       }
 
       return { owner: chain.owner.name, entries: out };
     });
 
-    const scores: ScoreRow[] = [...points.entries()]
-      .map(([name, p]) => ({ name, points: p }))
-      .sort((a, b) => b.points - a.points);
+    const roundScores: RoundScore[] = this.players.map((player) => ({
+      id: player.id,
+      name: player.name,
+      points: pointsById.get(player.id) ?? 0,
+    }));
 
-    this.emitter.sendReveal(chains, scores);
-    this.onFinished();
+    this.onComplete(chains, roundScores);
   }
 
   private lastEntry(chainIndex: number): Entry {
