@@ -1,6 +1,7 @@
 <script lang="ts">
   import { game } from "../stores";
   import { actions } from "../connection";
+  import { avatarUrl } from "../avatars";
   import type { MatchResult } from "@krabbelketen/shared";
 
   $: chains = $game.reveal?.chains ?? [];
@@ -22,7 +23,11 @@
       <h3>Scorebord</h3>
       {#each scores as row, i}
         <div class="score-row">
-          <span>{i === 0 ? "🏆" : `${i + 1}.`} {row.name}</span>
+          <span class="who">
+            {i === 0 ? "🏆" : `${i + 1}.`}
+            <img class="savatar" src={avatarUrl(row.avatar)} alt="" />
+            {row.name}
+          </span>
           <span class="score-right">
             <strong>{row.points} pt</strong>
             {#if row.roundPoints > 0}
@@ -77,6 +82,13 @@
     padding: 5px 0;
     font-weight: 700;
     color: #1f2d4d;
+  }
+  .who { display: flex; align-items: center; gap: 8px; }
+  .savatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 2px solid #1f2d4d;
   }
   .score-right { display: flex; align-items: center; gap: 8px; }
   .score-row strong {

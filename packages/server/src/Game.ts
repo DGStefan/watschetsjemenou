@@ -39,6 +39,7 @@ interface Chain {
 export interface RoundScore {
   id: string;
   name: string;
+  avatar: string;
   points: number;
 }
 
@@ -229,6 +230,7 @@ export class Game {
     const roundScores: RoundScore[] = this.players.map((player) => ({
       id: player.id,
       name: player.name,
+      avatar: player.avatar,
       points: pointsById.get(player.id) ?? 0,
     }));
 

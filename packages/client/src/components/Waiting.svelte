@@ -1,25 +1,32 @@
 <script lang="ts">
   import { game } from "../stores";
   import { actions } from "../connection";
+  import { avatarUrl } from "../avatars";
 
   $: waiting = $game.waiting;
   // De moeilijkheid is gedeeld: iedereen in de lobby ziet dezelfde keuze.
   $: difficulty = waiting?.difficulty ?? "eenvoudig";
+  $: scores = waiting?.scores ?? [];
+  $: anyPoints = scores.some((s) => s.points > 0);
 </script>
 
 <div class="card">
   <h2>Wachtkamer</h2>
-  <p class="status">Room: <span class="tag">{$game.room}</span></p>
 
-  <div class="players">
-    {#each waiting?.players ?? [] as player, i}
-      <span class="chip c{(i % 4) + 1}">{player}</span>
+  <div class="scores">
+    {#each scores as row, i}
+      <div class="score-row">
+        <span class="rank">{anyPoints && i === 0 ? "🏆" : `${i + 1}.`}</span>
+        <img class="pavatar" src={avatarUrl(row.avatar)} alt="" />
+        <span class="pname">{row.name}</span>
+        <span class="pscore">{row.points}<span class="pt">pt</span></span>
+      </div>
     {/each}
   </div>
 
   <p class="status">
     {#if waiting?.canStart}
-      {waiting.players.length} spelers in de lobby — klaar om te starten!
+      {scores.length} spelers in de lobby — klaar om te starten!
     {:else}
       Wachten op spelers… (minimaal {waiting?.minPlayers ?? 2})
     {/if}
@@ -54,7 +61,52 @@
   </button>
 </div>
 
+<p class="room-hint">spelcode <strong>{$game.room}</strong></p>
+
 <style>
+  .scores {
+    margin: 6px 0 4px;
+  }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 2px;
+    border-top: 2px dashed #e3e1d8;
+  }
+  .score-row:first-child {
+    border-top: none;
+  }
+  .rank {
+    width: 22px;
+    text-align: center;
+    font-weight: 800;
+    color: #888780;
+  }
+  .pavatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 2.5px solid #1f2d4d;
+    display: block;
+  }
+  .pname {
+    flex: 1;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1f2d4d;
+  }
+  .pscore {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #6c5ce7;
+  }
+  .pscore .pt {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 3px;
+    color: #8a8fb0;
+  }
   .diff-label {
     display: block;
     font-size: 0.8rem;
@@ -82,5 +134,14 @@
     color: #51607d;
     margin: 8px 0 0;
     min-height: 1.2em;
+  }
+  .room-hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #7c89a3;
+    margin: -8px 0 0;
+  }
+  .room-hint strong {
+    letter-spacing: 1px;
   }
 </style>

@@ -22,8 +22,8 @@ export class Room {
     this.difficulty = difficulty;
   }
 
-  addPlayer(id: string, name: string): Player {
-    const player = new Player(id, name);
+  addPlayer(id: string, name: string, avatar: string): Player {
+    const player = new Player(id, name, avatar);
     this.players.push(player);
     return player;
   }
@@ -54,6 +54,13 @@ export class Room {
       minPlayers: config.minPlayers,
       canStart: this.canStart,
       difficulty: this.difficulty,
+      scores: this.players
+        .map((p) => ({
+          name: p.name,
+          avatar: p.avatar,
+          points: this.totals.get(p.id) ?? 0,
+        }))
+        .sort((a, b) => b.points - a.points),
     };
   }
 
@@ -69,6 +76,7 @@ export class Room {
       const scores: ScoreRow[] = roundScores
         .map((rs) => ({
           name: rs.name,
+          avatar: rs.avatar,
           points: this.totals.get(rs.id) ?? rs.points,
           roundPoints: rs.points,
         }))

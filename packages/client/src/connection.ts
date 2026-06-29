@@ -4,7 +4,7 @@ import { game } from "./stores";
 
 // Onthoud de laatste join, zodat we na een herverbinding (bv. de server is
 // herstart) automatisch opnieuw kunnen joinen in plaats van vast te lopen.
-let lastJoin: { name: string; room: string } | null = null;
+let lastJoin: { name: string; room: string; avatar: string } | null = null;
 let connectedBefore = false;
 
 socket.on("connect", () => {
@@ -40,9 +40,9 @@ socket.on("info", (info) => game.update((s) => ({ ...s, info })));
 
 /** De acties die de client naar de server stuurt. */
 export const actions = {
-  join: (name: string, room: string) => {
-    lastJoin = { name, room };
-    socket.emit("join", { name, room });
+  join: (name: string, room: string, avatar: string) => {
+    lastJoin = { name, room, avatar };
+    socket.emit("join", { name, room, avatar });
   },
   setDifficulty: (difficulty: Difficulty) =>
     socket.emit("setDifficulty", { difficulty }),

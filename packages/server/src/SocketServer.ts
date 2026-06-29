@@ -45,9 +45,11 @@ export class SocketServer {
   }
 
   private onConnection(socket: GameSocket): void {
-    socket.on("join", ({ name, room }) => {
+    socket.on("join", ({ name, room, avatar }) => {
       const cleanName = (name || "Naamloos").trim().slice(0, 20) || "Naamloos";
       const code = (room || "TEST").trim().toUpperCase().slice(0, 8) || "TEST";
+      // Avatar-id opschonen: alleen letters/cijfers, kort. Leeg -> "a01".
+      const cleanAvatar = (avatar || "").replace(/[^a-z0-9]/gi, "").slice(0, 8) || "a01";
 
       const r = this.rooms.getOrCreate(code);
       if (r.status !== "waiting") {
@@ -60,7 +62,7 @@ export class SocketServer {
 
       socket.join(code);
       socket.data.room = code;
-      r.addPlayer(socket.id, cleanName);
+      r.addPlayer(socket.id, cleanName, cleanAvatar);
 
       socket.emit("joined", { room: code, name: cleanName });
       this.io.to(code).emit("waiting", r.waitingPayload());

@@ -24,11 +24,18 @@ export interface PhasePayload {
   prompt: Prompt;
 }
 
+export interface PlayerScore {
+  name: string;
+  avatar: string; // id van de gekozen avatar, bijv. "a03"
+  points: number;
+}
+
 export interface WaitingPayload {
   players: string[];
   minPlayers: number;
   canStart: boolean;
   difficulty: Difficulty; // de gedeelde keuze voor de hele lobby
+  scores: PlayerScore[]; // lopend toernooi-totaal, hoog naar laag
 }
 
 export interface PassingPayload {
@@ -54,6 +61,7 @@ export interface RevealChain {
 
 export interface ScoreRow {
   name: string;
+  avatar: string;
   points: number; // totaal over de hele lobby
   roundPoints: number; // punten in de laatste ronde (de "+X")
 }
@@ -71,6 +79,7 @@ export interface JoinedPayload {
 export interface JoinPayload {
   name: string;
   room: string;
+  avatar: string; // id van de gekozen avatar
 }
 
 export interface SubmitPayload {

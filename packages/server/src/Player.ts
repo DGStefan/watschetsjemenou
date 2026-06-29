@@ -5,6 +5,7 @@ export class Player {
   constructor(
     public readonly id: string, // socket-id
     public name: string,
+    public avatar: string, // id van de gekozen avatar
   ) {}
 
   /** Markeer de speler als weggevallen (verbinding verbroken tijdens een potje). */
