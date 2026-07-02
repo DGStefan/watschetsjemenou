@@ -80,6 +80,9 @@ export interface JoinPayload {
   name: string;
   room: string;
   avatar: string; // id van de gekozen avatar
+  // Stabiele, zelf-gegenereerde client-identiteit (uit localStorage). Overleeft
+  // een refresh en laat de server een terugkerende speler herkennen.
+  clientId: string;
 }
 
 export interface SubmitPayload {

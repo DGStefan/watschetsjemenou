@@ -19,7 +19,7 @@ import { config } from "./config";
  * Socket.IO te weten. Dat maakt de spel-logica los testbaar.
  */
 export interface GameEmitter {
-  sendPhase(playerId: string, payload: PhasePayload): void;
+  sendPhase(socketId: string, payload: PhasePayload): void;
   sendPassing(message: string): void;
   sendReveal(chains: RevealChain[], scores: ScoreRow[]): void;
 }
@@ -56,6 +56,11 @@ export class Game {
   private accepting = false;
   private readonly submissions = new Map<string, string>();
   private timer: ReturnType<typeof setTimeout> | null = null;
+  // Momentopname van de lopende fase, zodat we een terugkerende speler exact
+  // hetzelfde scherm opnieuw kunnen sturen.
+  private currentType: PhaseType | null = null;
+  private currentEndsAt = 0;
+  private currentPassingMessage: string | null = null;
 
   constructor(
     private readonly players: Player[],
@@ -115,15 +120,12 @@ export class Game {
           ? config.drawSeconds
           : config.guessSeconds;
     const endsAt = Date.now() + seconds * 1000;
+    this.currentType = type;
+    this.currentEndsAt = endsAt;
+    this.currentPassingMessage = null;
 
     this.players.forEach((player, p) => {
-      const chainIndex = Game.mod(p - i, n);
-      const last = this.lastEntry(chainIndex);
-      const prompt: Prompt =
-        last.type === "drawing"
-          ? { kind: "image", dataUrl: last.value }
-          : { kind: "word", text: last.value };
-      this.emitter.sendPhase(player.id, { index: i, total: n, type, endsAt, prompt });
+      this.emitter.sendPhase(player.socketId, this.phaseFor(p, type, endsAt));
     });
 
     this.clearTimer();
@@ -161,6 +163,8 @@ export class Game {
         : type === "draw"
           ? "Tekeningen worden doorgegeven…"
           : "Antwoorden worden doorgegeven…";
+    this.currentType = null;
+    this.currentPassingMessage = message;
     this.emitter.sendPassing(message);
     this.timer = setTimeout(() => this.nextPhase(), config.passMs);
   }
@@ -205,7 +209,7 @@ export class Game {
         return {
           type: entry.type,
           value: entry.value,
-          by: entry.by ? entry.by.name : null,
+          by: entry.by ? entry.by.displayName : null,
           match,
         };
       });
@@ -224,17 +228,46 @@ export class Game {
         }
       }
 
-      return { owner: chain.owner.name, entries: out };
+      return { owner: chain.owner.displayName, entries: out };
     });
 
     const roundScores: RoundScore[] = this.players.map((player) => ({
       id: player.id,
-      name: player.name,
+      name: player.displayName,
       avatar: player.avatar,
       points: pointsById.get(player.id) ?? 0,
     }));
 
     this.onComplete(chains, roundScores);
+  }
+
+  /**
+   * Stuur een terugkerende speler (op zijn nieuwe socket) opnieuw het scherm dat
+   * bij de huidige stand hoort: de lopende fase, of het doorgeef-tussenscherm.
+   */
+  resendStateTo(socketId: string): void {
+    const p = this.players.findIndex((pl) => pl.socketId === socketId);
+    if (p < 0) return;
+    if (this.accepting && this.currentType) {
+      this.emitter.sendPhase(
+        this.players[p].socketId,
+        this.phaseFor(p, this.currentType, this.currentEndsAt),
+      );
+    } else if (this.currentPassingMessage) {
+      this.emitter.sendPassing(this.currentPassingMessage);
+    }
+  }
+
+  /** Bouw het fase-scherm voor de speler op plek p in de huidige fase. */
+  private phaseFor(p: number, type: PhaseType, endsAt: number): PhasePayload {
+    const n = this.players.length;
+    const chainIndex = Game.mod(p - this.phase, n);
+    const last = this.lastEntry(chainIndex);
+    const prompt: Prompt =
+      last.type === "drawing"
+        ? { kind: "image", dataUrl: last.value }
+        : { kind: "word", text: last.value };
+    return { index: this.phase, total: n, type, endsAt, prompt };
   }
 
   private lastEntry(chainIndex: number): Entry {

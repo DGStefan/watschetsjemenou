@@ -10,6 +10,11 @@ export const config = {
   passMs: 3500, // duur van het doorgeef-tussenscherm
   graceMs: 2000, // extra marge voordat de server een fase forceert
 
+  // Room-opruiming: sluit een room na deze tijd zonder activiteit, en hoe vaak
+  // we daarop controleren.
+  roomTimeoutMs: Number(process.env.ROOM_TIMEOUT_MS) || 30 * 60 * 1000,
+  sweepIntervalMs: Number(process.env.SWEEP_INTERVAL_MS) || 60 * 1000,
+
   // Puntentelling (een kleine tikfout "bijna" telt mee als goed geraden).
   points: {
     correctGuessDrawer: 2, // jouw tekening goed geraden -> jij (tekenaar)

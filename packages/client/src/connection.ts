@@ -1,17 +1,17 @@
 import type { Difficulty } from "@krabbelketen/shared";
 import { socket } from "./socket";
 import { game } from "./stores";
+import { clientId, saveSession, loadSession, type LastSession } from "./identity";
 
-// Onthoud de laatste join, zodat we na een herverbinding (bv. de server is
-// herstart) automatisch opnieuw kunnen joinen in plaats van vast te lopen.
-let lastJoin: { name: string; room: string; avatar: string } | null = null;
-let connectedBefore = false;
+// Onthoud de laatste join, zodat we na een (her)verbinding automatisch opnieuw
+// joinen. Bij een verse paginalading (na een refresh) komt dit uit localStorage,
+// zodat de speler meteen terugkeert in zijn potje in plaats van in de lobby.
+let lastJoin: LastSession | null = loadSession();
 
 socket.on("connect", () => {
-  if (connectedBefore && lastJoin) {
-    socket.emit("join", lastJoin);
+  if (lastJoin) {
+    socket.emit("join", { ...lastJoin, clientId: clientId() });
   }
-  connectedBefore = true;
 });
 
 // Koppel de inkomende server-events aan de store.
@@ -42,7 +42,9 @@ socket.on("info", (info) => game.update((s) => ({ ...s, info })));
 export const actions = {
   join: (name: string, room: string, avatar: string) => {
     lastJoin = { name, room, avatar };
-    socket.emit("join", { name, room, avatar });
+    // Bewaar de sessie zodat een refresh automatisch terugkeert in dit potje.
+    saveSession(lastJoin);
+    socket.emit("join", { ...lastJoin, clientId: clientId() });
   },
   setDifficulty: (difficulty: Difficulty) =>
     socket.emit("setDifficulty", { difficulty }),

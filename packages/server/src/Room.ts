@@ -1,4 +1,9 @@
-import type { Difficulty, ScoreRow, WaitingPayload } from "@krabbelketen/shared";
+import type {
+  Difficulty,
+  RevealPayload,
+  ScoreRow,
+  WaitingPayload,
+} from "@krabbelketen/shared";
 import { Player } from "./Player";
 import { Game, type GameEmitter } from "./Game";
 import { config } from "./config";
@@ -14,16 +19,27 @@ export class Room {
   private totals = new Map<string, number>();
   // Gedeelde moeilijkheid voor de hele lobby (blijft tussen potjes onthouden).
   private difficulty: Difficulty = "eenvoudig";
+  // Laatste onthulling, bewaard zolang status "reveal" is, zodat een speler die
+  // op dat scherm refresht het terugkrijgt.
+  private lastReveal: RevealPayload | null = null;
+  // Tijdstip (epoch ms) van de laatste betekenisvolle actie; de opruimer sluit
+  // rooms die te lang stil zijn.
+  lastActivity = Date.now();
 
   constructor(public readonly code: string) {}
+
+  /** Markeer activiteit, zodat de room niet als inactief wordt opgeruimd. */
+  touch(now: number): void {
+    this.lastActivity = now;
+  }
 
   setDifficulty(difficulty: Difficulty): void {
     if (this.status !== "waiting") return;
     this.difficulty = difficulty;
   }
 
-  addPlayer(id: string, name: string, avatar: string): Player {
-    const player = new Player(id, name, avatar);
+  addPlayer(id: string, socketId: string, name: string, avatar: string): Player {
+    const player = new Player(id, socketId, name, avatar);
     this.players.push(player);
     return player;
   }
@@ -36,8 +52,23 @@ export class Room {
     return this.players.find((p) => p.id === id);
   }
 
-  markGone(id: string): void {
-    this.getPlayer(id)?.markGone();
+  getPlayerBySocket(socketId: string): Player | undefined {
+    return this.players.find((p) => p.socketId === socketId);
+  }
+
+  /** De bewaarde onthulling (alleen zinvol zolang status "reveal" is). */
+  currentReveal(): RevealPayload | null {
+    return this.lastReveal;
+  }
+
+  /** Stuur een terugkerende speler het scherm dat bij een lopend potje hoort. */
+  resendStateTo(socketId: string): void {
+    this.game?.resendStateTo(socketId);
+  }
+
+  /** Stop lopende timers (bij opruimen van de room). */
+  dispose(): void {
+    this.game?.stop();
   }
 
   get isEmpty(): boolean {
@@ -50,13 +81,13 @@ export class Room {
 
   waitingPayload(): WaitingPayload {
     return {
-      players: this.players.map((p) => p.name),
+      players: this.players.map((p) => p.displayName),
       minPlayers: config.minPlayers,
       canStart: this.canStart,
       difficulty: this.difficulty,
       scores: this.players
         .map((p) => ({
-          name: p.name,
+          name: p.displayName,
           avatar: p.avatar,
           points: this.totals.get(p.id) ?? 0,
         }))
@@ -67,6 +98,7 @@ export class Room {
   startGame(emitter: GameEmitter): void {
     if (this.status === "playing" || !this.canStart) return;
     this.status = "playing";
+    this.lastReveal = null;
     // Snapshot van de huidige spelers; de Game houdt deze referenties vast.
     this.game = new Game([...this.players], emitter, this.difficulty, (chains, roundScores) => {
       // Tel de ronde-punten op bij het lobby-totaal.
@@ -82,6 +114,7 @@ export class Room {
         }))
         .sort((a, b) => b.points - a.points);
       this.status = "reveal";
+      this.lastReveal = { chains, scores };
       emitter.sendReveal(chains, scores);
     });
     this.game.start();
@@ -95,5 +128,6 @@ export class Room {
     this.game?.stop();
     this.game = null;
     this.status = "waiting";
+    this.lastReveal = null;
   }
 }
