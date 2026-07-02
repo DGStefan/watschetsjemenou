@@ -54,11 +54,12 @@ h3 { font-size: 1rem; font-weight: 800; margin: 0 0 8px; color: var(--ink); }
   margin-bottom: 20px;
 }
 
-label {
+label,
+.field-label {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin: 12px 0 5px;
+  margin: 12px 0 6px;
   color: var(--muted);
 }
 

@@ -24,7 +24,7 @@
     {/each}
   </div>
 
-  <p class="status">
+  <p class="status" class:ready={waiting?.canStart}>
     {#if waiting?.canStart}
       {scores.length} spelers in de lobby — klaar om te starten!
     {:else}
@@ -32,29 +32,34 @@
     {/if}
   </p>
 
-  <span class="diff-label">Moeilijkheid (voor iedereen)</span>
-  <div class="diff-toggle">
-    <button
-      class:active={difficulty === "eenvoudig"}
-      on:click={() => actions.setDifficulty("eenvoudig")}
-    >
-      Eenvoudig
-    </button>
-    <button
-      class:active={difficulty === "geavanceerd"}
-      on:click={() => actions.setDifficulty("geavanceerd")}
-    >
-      Geavanceerd
-    </button>
+  <div class="settings">
+    <span class="settings-title">Instellingen</span>
+    <span class="settings-note">Geldt voor iedereen in de lobby.</span>
+
+    <span class="field-label diff-label">Moeilijkheid</span>
+    <div class="diff-toggle">
+      <button
+        class:active={difficulty === "eenvoudig"}
+        on:click={() => actions.setDifficulty("eenvoudig")}
+      >
+        Eenvoudig
+      </button>
+      <button
+        class:active={difficulty === "geavanceerd"}
+        on:click={() => actions.setDifficulty("geavanceerd")}
+      >
+        Geavanceerd
+      </button>
+    </div>
+    <p class="diff-hint">
+      {#if difficulty === "eenvoudig"}
+        Gewone, goed tekenbare woorden.
+      {:else}
+        Samenstellingen en abstracte woorden — meer kans op hilarische
+        misverstanden!
+      {/if}
+    </p>
   </div>
-  <p class="diff-hint">
-    {#if difficulty === "eenvoudig"}
-      Gewone, goed tekenbare woorden.
-    {:else}
-      Samenstellingen en abstracte woorden — meer kans op hilarische
-      misverstanden!
-    {/if}
-  </p>
 
   <div class="actions">
     <button class="cta" on:click={actions.start} disabled={!waiting?.canStart}>
@@ -68,17 +73,18 @@
 
 <style>
   .scores {
-    margin: 6px 0 4px;
+    margin: 14px 0 4px;
   }
   .score-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 2px;
-    border-top: 2px dashed #e3e1d8;
+    padding: 12px 4px;
+    border-top: 2px dashed #edece4;
   }
   .score-row:first-child {
     border-top: none;
+    padding-top: 4px;
   }
   .rank {
     width: 22px;
@@ -110,12 +116,32 @@
     margin-left: 3px;
     color: #8a8fb0;
   }
-  .diff-label {
-    display: block;
-    font-size: 0.8rem;
+  .status.ready {
+    color: #0f6e56;
     font-weight: 700;
-    color: #51607d;
-    margin: 14px 0 6px;
+  }
+  .settings {
+    margin-top: 20px;
+    padding: 18px 18px 20px;
+    background: #f6faff;
+    border: 2px solid #e5edfa;
+    border-radius: 18px;
+  }
+  .settings-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .settings-note {
+    display: block;
+    font-size: 0.9rem;
+    color: #8a8fb0;
+    margin-top: 3px;
+  }
+  .diff-label {
+    /* alleen de spacing wijkt af; look komt van .field-label in app.css */
+    margin: 18px 0 14px;
   }
   .diff-toggle {
     display: flex;
@@ -133,18 +159,22 @@
     color: #fff;
   }
   .diff-hint {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: #51607d;
-    margin: 8px 0 0;
+    margin: 16px 0 0;
     min-height: 1.2em;
+    line-height: 1.45;
   }
   .actions {
     display: flex;
     align-items: stretch;
     gap: 10px;
+    margin-top: 22px;
+  }
+  .actions button {
+    margin-top: 0;
   }
   .leave {
-    margin-top: 16px;
     background: #fff;
     color: #b23b3b;
     box-shadow: 3px 3px 0 #b23b3b;
@@ -152,9 +182,9 @@
   }
   .room-hint {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #7c89a3;
-    margin: -8px 0 0;
+    margin: 4px 0 0;
   }
   .room-hint strong {
     letter-spacing: 1px;

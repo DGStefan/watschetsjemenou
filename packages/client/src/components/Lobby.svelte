@@ -7,6 +7,11 @@
   let name = "";
   let room = randomRoomCode();
   let avatar = randomAvatar();
+
+  // Focus meteen het naamveld: dat is het eerste dat je invult.
+  function autofocus(node: HTMLElement) {
+    node.focus();
+  }
 </script>
 
 <div class="card">
@@ -15,9 +20,9 @@
   </p>
 
   <label for="name">Jouw naam</label>
-  <input id="name" type="text" bind:value={name} maxlength="20" placeholder="bijv. Stefan" />
+  <input id="name" type="text" use:autofocus bind:value={name} maxlength="20" placeholder="bijv. Stefan" />
 
-  <span class="label-like">Kies je avatar</span>
+  <span class="field-label">Kies je avatar</span>
   <div class="avatar-grid">
     {#each AVATARS as id}
       <button
@@ -37,6 +42,7 @@
     id="room"
     type="text"
     bind:value={room}
+    on:focus={(e) => e.currentTarget.select()}
     on:input={(e) => (room = e.currentTarget.value.toUpperCase())}
     maxlength="8"
     placeholder="bijv. AB3KP"
@@ -51,12 +57,10 @@
 </div>
 
 <style>
-  .label-like {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin: 12px 0 6px;
-    color: #51607d;
+  /* Iets meer lucht tussen de secties (naam, avatar, spelcode). */
+  label,
+  .field-label {
+    margin-top: 22px;
   }
   .avatar-grid {
     display: grid;
