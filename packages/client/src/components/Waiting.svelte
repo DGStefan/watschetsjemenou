@@ -143,9 +143,6 @@
     align-items: stretch;
     gap: 10px;
   }
-  .actions .cta {
-    flex: 1;
-  }
   .leave {
     margin-top: 16px;
     background: #fff;

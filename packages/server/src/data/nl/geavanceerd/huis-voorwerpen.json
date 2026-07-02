@@ -160,10 +160,6 @@
     "aliases": []
   },
   {
-    "word": "kompas",
-    "aliases": []
-  },
-  {
     "word": "kroonluchter",
     "aliases": [
       "luchter"
@@ -342,10 +338,6 @@
     "aliases": []
   },
   {
-    "word": "thermometer",
-    "aliases": []
-  },
-  {
     "word": "tuinslang",
     "aliases": []
   },
@@ -360,15 +352,7 @@
     "aliases": []
   },
   {
-    "word": "vergrootglas",
-    "aliases": []
-  },
-  {
     "word": "verlengsnoer",
-    "aliases": []
-  },
-  {
-    "word": "verrekijker",
     "aliases": []
   },
   {
@@ -406,12 +390,6 @@
   {
     "word": "weerstation",
     "aliases": []
-  },
-  {
-    "word": "wereldbol",
-    "aliases": [
-      "globe"
-    ]
   },
   {
     "word": "windvaan",
