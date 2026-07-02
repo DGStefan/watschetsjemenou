@@ -1,0 +1,437 @@
+[
+  {
+    "word": "aardappel",
+    "aliases": []
+  },
+  {
+    "word": "aardbei",
+    "aliases": []
+  },
+  {
+    "word": "abrikoos",
+    "aliases": []
+  },
+  {
+    "word": "ananas",
+    "aliases": []
+  },
+  {
+    "word": "appel",
+    "aliases": []
+  },
+  {
+    "word": "appelflap",
+    "aliases": []
+  },
+  {
+    "word": "appelsap",
+    "aliases": [
+      "sap"
+    ]
+  },
+  {
+    "word": "banaan",
+    "aliases": []
+  },
+  {
+    "word": "biefstuk",
+    "aliases": []
+  },
+  {
+    "word": "bier",
+    "aliases": [
+      "pilsje"
+    ]
+  },
+  {
+    "word": "bloemkool",
+    "aliases": []
+  },
+  {
+    "word": "bonbon",
+    "aliases": []
+  },
+  {
+    "word": "bosbes",
+    "aliases": [
+      "blauwe bes"
+    ]
+  },
+  {
+    "word": "boter",
+    "aliases": []
+  },
+  {
+    "word": "boterham",
+    "aliases": [
+      "sandwich"
+    ]
+  },
+  {
+    "word": "broccoli",
+    "aliases": []
+  },
+  {
+    "word": "brood",
+    "aliases": []
+  },
+  {
+    "word": "broodje",
+    "aliases": []
+  },
+  {
+    "word": "cake",
+    "aliases": []
+  },
+  {
+    "word": "champignon",
+    "aliases": [
+      "paddenstoel"
+    ]
+  },
+  {
+    "word": "chocolade",
+    "aliases": [
+      "chocola"
+    ]
+  },
+  {
+    "word": "citroen",
+    "aliases": []
+  },
+  {
+    "word": "cola",
+    "aliases": []
+  },
+  {
+    "word": "courgette",
+    "aliases": []
+  },
+  {
+    "word": "croissant",
+    "aliases": []
+  },
+  {
+    "word": "cupcake",
+    "aliases": []
+  },
+  {
+    "word": "donut",
+    "aliases": []
+  },
+  {
+    "word": "drop",
+    "aliases": []
+  },
+  {
+    "word": "druif",
+    "aliases": [
+      "druiven"
+    ]
+  },
+  {
+    "word": "ei",
+    "aliases": []
+  },
+  {
+    "word": "erwt",
+    "aliases": []
+  },
+  {
+    "word": "framboos",
+    "aliases": []
+  },
+  {
+    "word": "friet",
+    "aliases": [
+      "patat",
+      "frietjes"
+    ]
+  },
+  {
+    "word": "frikandel",
+    "aliases": []
+  },
+  {
+    "word": "ham",
+    "aliases": []
+  },
+  {
+    "word": "hamburger",
+    "aliases": []
+  },
+  {
+    "word": "honing",
+    "aliases": []
+  },
+  {
+    "word": "hotdog",
+    "aliases": []
+  },
+  {
+    "word": "ijsje",
+    "aliases": [
+      "ijsco"
+    ]
+  },
+  {
+    "word": "jam",
+    "aliases": []
+  },
+  {
+    "word": "kaas",
+    "aliases": []
+  },
+  {
+    "word": "kauwgom",
+    "aliases": []
+  },
+  {
+    "word": "kers",
+    "aliases": []
+  },
+  {
+    "word": "kiwi",
+    "aliases": []
+  },
+  {
+    "word": "knoflook",
+    "aliases": []
+  },
+  {
+    "word": "koekje",
+    "aliases": [
+      "koek"
+    ]
+  },
+  {
+    "word": "koffie",
+    "aliases": []
+  },
+  {
+    "word": "kokosnoot",
+    "aliases": [
+      "kokos"
+    ]
+  },
+  {
+    "word": "komkommer",
+    "aliases": []
+  },
+  {
+    "word": "kroket",
+    "aliases": []
+  },
+  {
+    "word": "limonade",
+    "aliases": [
+      "ranja"
+    ]
+  },
+  {
+    "word": "lolly",
+    "aliases": []
+  },
+  {
+    "word": "mais",
+    "aliases": []
+  },
+  {
+    "word": "mandarijn",
+    "aliases": []
+  },
+  {
+    "word": "mango",
+    "aliases": []
+  },
+  {
+    "word": "melk",
+    "aliases": []
+  },
+  {
+    "word": "milkshake",
+    "aliases": []
+  },
+  {
+    "word": "muffin",
+    "aliases": []
+  },
+  {
+    "word": "oliebol",
+    "aliases": []
+  },
+  {
+    "word": "pannenkoek",
+    "aliases": []
+  },
+  {
+    "word": "paprika",
+    "aliases": []
+  },
+  {
+    "word": "peer",
+    "aliases": []
+  },
+  {
+    "word": "pepernoot",
+    "aliases": [
+      "kruidnoot"
+    ]
+  },
+  {
+    "word": "perzik",
+    "aliases": []
+  },
+  {
+    "word": "pindakaas",
+    "aliases": []
+  },
+  {
+    "word": "pizza",
+    "aliases": []
+  },
+  {
+    "word": "pompoen",
+    "aliases": []
+  },
+  {
+    "word": "popcorn",
+    "aliases": []
+  },
+  {
+    "word": "prei",
+    "aliases": []
+  },
+  {
+    "word": "pruim",
+    "aliases": []
+  },
+  {
+    "word": "pudding",
+    "aliases": []
+  },
+  {
+    "word": "radijs",
+    "aliases": []
+  },
+  {
+    "word": "rozijn",
+    "aliases": []
+  },
+  {
+    "word": "salami",
+    "aliases": []
+  },
+  {
+    "word": "saus",
+    "aliases": []
+  },
+  {
+    "word": "sinaasappel",
+    "aliases": [
+      "appelsien"
+    ]
+  },
+  {
+    "word": "sla",
+    "aliases": []
+  },
+  {
+    "word": "smoothie",
+    "aliases": []
+  },
+  {
+    "word": "snoep",
+    "aliases": []
+  },
+  {
+    "word": "soep",
+    "aliases": []
+  },
+  {
+    "word": "spaghetti",
+    "aliases": [
+      "pasta"
+    ]
+  },
+  {
+    "word": "spinazie",
+    "aliases": []
+  },
+  {
+    "word": "stokbrood",
+    "aliases": []
+  },
+  {
+    "word": "suikerspin",
+    "aliases": []
+  },
+  {
+    "word": "sushi",
+    "aliases": []
+  },
+  {
+    "word": "taart",
+    "aliases": [
+      "appeltaart"
+    ]
+  },
+  {
+    "word": "taco",
+    "aliases": []
+  },
+  {
+    "word": "thee",
+    "aliases": []
+  },
+  {
+    "word": "tomaat",
+    "aliases": []
+  },
+  {
+    "word": "tosti",
+    "aliases": []
+  },
+  {
+    "word": "ui",
+    "aliases": []
+  },
+  {
+    "word": "wafel",
+    "aliases": []
+  },
+  {
+    "word": "walnoot",
+    "aliases": [
+      "noot"
+    ]
+  },
+  {
+    "word": "water",
+    "aliases": []
+  },
+  {
+    "word": "watermeloen",
+    "aliases": [
+      "meloen"
+    ]
+  },
+  {
+    "word": "wijn",
+    "aliases": []
+  },
+  {
+    "word": "worst",
+    "aliases": []
+  },
+  {
+    "word": "wortel",
+    "aliases": [
+      "peen"
+    ]
+  },
+  {
+    "word": "yoghurt",
+    "aliases": []
+  }
+]

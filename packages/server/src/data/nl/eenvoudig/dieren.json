@@ -1,0 +1,444 @@
+[
+  {
+    "word": "aap",
+    "aliases": []
+  },
+  {
+    "word": "beer",
+    "aliases": []
+  },
+  {
+    "word": "bever",
+    "aliases": []
+  },
+  {
+    "word": "bij",
+    "aliases": []
+  },
+  {
+    "word": "cavia",
+    "aliases": []
+  },
+  {
+    "word": "dolfijn",
+    "aliases": []
+  },
+  {
+    "word": "duif",
+    "aliases": []
+  },
+  {
+    "word": "eekhoorn",
+    "aliases": []
+  },
+  {
+    "word": "eend",
+    "aliases": []
+  },
+  {
+    "word": "egel",
+    "aliases": []
+  },
+  {
+    "word": "eland",
+    "aliases": []
+  },
+  {
+    "word": "ezel",
+    "aliases": []
+  },
+  {
+    "word": "flamingo",
+    "aliases": []
+  },
+  {
+    "word": "gans",
+    "aliases": []
+  },
+  {
+    "word": "garnaal",
+    "aliases": []
+  },
+  {
+    "word": "geit",
+    "aliases": []
+  },
+  {
+    "word": "giraf",
+    "aliases": [
+      "giraffe"
+    ]
+  },
+  {
+    "word": "gorilla",
+    "aliases": []
+  },
+  {
+    "word": "goudvis",
+    "aliases": []
+  },
+  {
+    "word": "haai",
+    "aliases": []
+  },
+  {
+    "word": "haan",
+    "aliases": []
+  },
+  {
+    "word": "hagedis",
+    "aliases": []
+  },
+  {
+    "word": "hamster",
+    "aliases": []
+  },
+  {
+    "word": "hert",
+    "aliases": [
+      "ree"
+    ]
+  },
+  {
+    "word": "hond",
+    "aliases": []
+  },
+  {
+    "word": "ijsbeer",
+    "aliases": []
+  },
+  {
+    "word": "kalf",
+    "aliases": []
+  },
+  {
+    "word": "kameel",
+    "aliases": [
+      "dromedaris"
+    ]
+  },
+  {
+    "word": "kanarie",
+    "aliases": []
+  },
+  {
+    "word": "kangoeroe",
+    "aliases": []
+  },
+  {
+    "word": "kat",
+    "aliases": [
+      "poes"
+    ]
+  },
+  {
+    "word": "kever",
+    "aliases": []
+  },
+  {
+    "word": "kikker",
+    "aliases": []
+  },
+  {
+    "word": "kip",
+    "aliases": []
+  },
+  {
+    "word": "koe",
+    "aliases": []
+  },
+  {
+    "word": "konijn",
+    "aliases": [
+      "haas"
+    ]
+  },
+  {
+    "word": "kraai",
+    "aliases": []
+  },
+  {
+    "word": "krab",
+    "aliases": []
+  },
+  {
+    "word": "kreeft",
+    "aliases": []
+  },
+  {
+    "word": "krokodil",
+    "aliases": [
+      "alligator"
+    ]
+  },
+  {
+    "word": "kuiken",
+    "aliases": []
+  },
+  {
+    "word": "kwal",
+    "aliases": [
+      "kwallen"
+    ]
+  },
+  {
+    "word": "lam",
+    "aliases": []
+  },
+  {
+    "word": "leeuw",
+    "aliases": []
+  },
+  {
+    "word": "libel",
+    "aliases": []
+  },
+  {
+    "word": "lieveheersbeestje",
+    "aliases": []
+  },
+  {
+    "word": "luiaard",
+    "aliases": []
+  },
+  {
+    "word": "luipaard",
+    "aliases": []
+  },
+  {
+    "word": "meeuw",
+    "aliases": [
+      "zeemeeuw"
+    ]
+  },
+  {
+    "word": "mier",
+    "aliases": []
+  },
+  {
+    "word": "mol",
+    "aliases": []
+  },
+  {
+    "word": "mossel",
+    "aliases": []
+  },
+  {
+    "word": "mug",
+    "aliases": []
+  },
+  {
+    "word": "muis",
+    "aliases": []
+  },
+  {
+    "word": "neushoorn",
+    "aliases": []
+  },
+  {
+    "word": "nijlpaard",
+    "aliases": []
+  },
+  {
+    "word": "octopus",
+    "aliases": [
+      "inktvis"
+    ]
+  },
+  {
+    "word": "oester",
+    "aliases": []
+  },
+  {
+    "word": "olifant",
+    "aliases": []
+  },
+  {
+    "word": "ooievaar",
+    "aliases": []
+  },
+  {
+    "word": "otter",
+    "aliases": []
+  },
+  {
+    "word": "paard",
+    "aliases": []
+  },
+  {
+    "word": "pad",
+    "aliases": []
+  },
+  {
+    "word": "panda",
+    "aliases": []
+  },
+  {
+    "word": "papegaai",
+    "aliases": []
+  },
+  {
+    "word": "pauw",
+    "aliases": []
+  },
+  {
+    "word": "pinguin",
+    "aliases": []
+  },
+  {
+    "word": "pony",
+    "aliases": []
+  },
+  {
+    "word": "rat",
+    "aliases": []
+  },
+  {
+    "word": "reiger",
+    "aliases": []
+  },
+  {
+    "word": "rendier",
+    "aliases": []
+  },
+  {
+    "word": "rups",
+    "aliases": []
+  },
+  {
+    "word": "salamander",
+    "aliases": []
+  },
+  {
+    "word": "schaap",
+    "aliases": []
+  },
+  {
+    "word": "schildpad",
+    "aliases": []
+  },
+  {
+    "word": "schorpioen",
+    "aliases": []
+  },
+  {
+    "word": "slak",
+    "aliases": []
+  },
+  {
+    "word": "slang",
+    "aliases": []
+  },
+  {
+    "word": "specht",
+    "aliases": []
+  },
+  {
+    "word": "spin",
+    "aliases": []
+  },
+  {
+    "word": "sprinkhaan",
+    "aliases": []
+  },
+  {
+    "word": "stier",
+    "aliases": []
+  },
+  {
+    "word": "stinkdier",
+    "aliases": []
+  },
+  {
+    "word": "struisvogel",
+    "aliases": []
+  },
+  {
+    "word": "tijger",
+    "aliases": []
+  },
+  {
+    "word": "uil",
+    "aliases": []
+  },
+  {
+    "word": "varken",
+    "aliases": [
+      "big"
+    ]
+  },
+  {
+    "word": "vis",
+    "aliases": []
+  },
+  {
+    "word": "vleermuis",
+    "aliases": []
+  },
+  {
+    "word": "vlieg",
+    "aliases": []
+  },
+  {
+    "word": "vlinder",
+    "aliases": []
+  },
+  {
+    "word": "vos",
+    "aliases": []
+  },
+  {
+    "word": "walrus",
+    "aliases": []
+  },
+  {
+    "word": "walvis",
+    "aliases": []
+  },
+  {
+    "word": "wasbeer",
+    "aliases": []
+  },
+  {
+    "word": "wesp",
+    "aliases": []
+  },
+  {
+    "word": "wolf",
+    "aliases": []
+  },
+  {
+    "word": "worm",
+    "aliases": [
+      "regenworm"
+    ]
+  },
+  {
+    "word": "zebra",
+    "aliases": []
+  },
+  {
+    "word": "zeehond",
+    "aliases": []
+  },
+  {
+    "word": "zeeleeuw",
+    "aliases": []
+  },
+  {
+    "word": "zeepaardje",
+    "aliases": []
+  },
+  {
+    "word": "zeester",
+    "aliases": []
+  },
+  {
+    "word": "zwaan",
+    "aliases": []
+  },
+  {
+    "word": "zwaluw",
+    "aliases": []
+  }
+]

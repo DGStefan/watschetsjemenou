@@ -1,46 +1,50 @@
-import type { Difficulty } from "@krabbelketen/shared";
-import easyData from "./data/eenvoudig.json";
-import advancedData from "./data/geavanceerd.json";
+import type { Difficulty, Language } from "@krabbelketen/shared";
+import { wordSets } from "./data";
+import type { WordEntry, WordSets } from "./data/types";
 import { normalize } from "./matching";
 
-export interface WordEntry {
-  word: string;
-  aliases: string[];
-}
+export type { WordEntry } from "./data/types";
+
+/** Zolang er maar één taal is, is dit de standaard. */
+const DEFAULT_LANGUAGE: Language = "nl";
 
 /**
- * De woordenlijsten, geladen uit data/eenvoudig.json en data/geavanceerd.json.
- * Nieuwe woorden toevoegen? Voeg een regel toe aan het juiste JSON-bestand:
+ * De woordenlijsten, geladen uit data/<taal>/<niveau>/<categorie>.json.
+ *
+ * Nieuwe woorden toevoegen? Voeg een regel toe aan het juiste categorie-JSON:
  *   { "word": "kameel", "aliases": ["dromedaris"] }
+ * Nieuwe categorie? Zet een JSON-bestand in de niveau-map en importeer het in
+ * de barrel (data/nl/<niveau>/index.ts).
+ *
+ * De Dictionary levert alleen de pool en de aliassen; het zonder-herhaling
+ * trekken gebeurt per lobby in een Deck (zie Room).
  */
 class DictionaryImpl {
-  private readonly sets: Record<Difficulty, WordEntry[]>;
-  // Aliassen van álle woorden (beide sets), voor de gok-controle.
+  private readonly sets: WordSets;
+  // Aliassen van álle woorden (alle talen/niveaus), voor de gok-controle.
   private readonly aliasByWord = new Map<string, string[]>();
 
-  constructor(sets: Record<Difficulty, WordEntry[]>) {
+  constructor(sets: WordSets) {
     this.sets = sets;
-    for (const list of Object.values(sets)) {
-      for (const entry of list) {
-        this.aliasByWord.set(normalize(entry.word), entry.aliases ?? []);
+    for (const byDifficulty of Object.values(sets)) {
+      for (const list of Object.values(byDifficulty)) {
+        for (const entry of list as WordEntry[]) {
+          this.aliasByWord.set(normalize(entry.word), entry.aliases ?? []);
+        }
       }
     }
   }
 
-  size(difficulty: Difficulty): number {
-    return this.sets[difficulty].length;
+  /** De volledige woordenpool (alleen de woorden) voor een niveau. */
+  poolFor(
+    difficulty: Difficulty,
+    language: Language = DEFAULT_LANGUAGE,
+  ): string[] {
+    return this.sets[language][difficulty].map((e) => e.word);
   }
 
-  /** Geef n (zo veel mogelijk verschillende) willekeurige woorden terug. */
-  pickWords(difficulty: Difficulty, n: number): string[] {
-    const shuffled = [...this.sets[difficulty]];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    const out: string[] = [];
-    for (let i = 0; i < n; i++) out.push(shuffled[i % shuffled.length].word);
-    return out;
+  size(difficulty: Difficulty, language: Language = DEFAULT_LANGUAGE): number {
+    return this.sets[language][difficulty].length;
   }
 
   /** Aliassen van een bekend woord (leeg als het woord niet voorkomt). */
@@ -49,7 +53,4 @@ class DictionaryImpl {
   }
 }
 
-export const dictionary = new DictionaryImpl({
-  eenvoudig: easyData as WordEntry[],
-  geavanceerd: advancedData as WordEntry[],
-});
+export const dictionary = new DictionaryImpl(wordSets);

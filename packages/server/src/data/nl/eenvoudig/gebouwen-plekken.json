@@ -1,0 +1,222 @@
+[
+  {
+    "word": "boerderij",
+    "aliases": []
+  },
+  {
+    "word": "brug",
+    "aliases": []
+  },
+  {
+    "word": "bushokje",
+    "aliases": [
+      "bushalte"
+    ]
+  },
+  {
+    "word": "dak",
+    "aliases": []
+  },
+  {
+    "word": "dam",
+    "aliases": []
+  },
+  {
+    "word": "dorp",
+    "aliases": []
+  },
+  {
+    "word": "fabriek",
+    "aliases": []
+  },
+  {
+    "word": "fontein",
+    "aliases": []
+  },
+  {
+    "word": "garage",
+    "aliases": []
+  },
+  {
+    "word": "haven",
+    "aliases": []
+  },
+  {
+    "word": "hek",
+    "aliases": [
+      "hekje"
+    ]
+  },
+  {
+    "word": "huis",
+    "aliases": []
+  },
+  {
+    "word": "hut",
+    "aliases": []
+  },
+  {
+    "word": "iglo",
+    "aliases": []
+  },
+  {
+    "word": "kasteel",
+    "aliases": []
+  },
+  {
+    "word": "kerk",
+    "aliases": []
+  },
+  {
+    "word": "klokkentoren",
+    "aliases": []
+  },
+  {
+    "word": "kraam",
+    "aliases": [
+      "marktkraam"
+    ]
+  },
+  {
+    "word": "molen",
+    "aliases": [
+      "windmolen"
+    ]
+  },
+  {
+    "word": "muur",
+    "aliases": [
+      "muurtje"
+    ]
+  },
+  {
+    "word": "paleis",
+    "aliases": []
+  },
+  {
+    "word": "park",
+    "aliases": []
+  },
+  {
+    "word": "piramide",
+    "aliases": []
+  },
+  {
+    "word": "poort",
+    "aliases": []
+  },
+  {
+    "word": "put",
+    "aliases": [
+      "waterput"
+    ]
+  },
+  {
+    "word": "raam",
+    "aliases": []
+  },
+  {
+    "word": "school",
+    "aliases": []
+  },
+  {
+    "word": "schoorsteen",
+    "aliases": []
+  },
+  {
+    "word": "schuur",
+    "aliases": []
+  },
+  {
+    "word": "speeltuin",
+    "aliases": []
+  },
+  {
+    "word": "stad",
+    "aliases": []
+  },
+  {
+    "word": "stadion",
+    "aliases": []
+  },
+  {
+    "word": "standbeeld",
+    "aliases": [
+      "beeld"
+    ]
+  },
+  {
+    "word": "station",
+    "aliases": [
+      "treinstation"
+    ]
+  },
+  {
+    "word": "tankstation",
+    "aliases": []
+  },
+  {
+    "word": "tempel",
+    "aliases": []
+  },
+  {
+    "word": "toren",
+    "aliases": []
+  },
+  {
+    "word": "trap",
+    "aliases": []
+  },
+  {
+    "word": "tuin",
+    "aliases": []
+  },
+  {
+    "word": "tunnel",
+    "aliases": []
+  },
+  {
+    "word": "voetbalveld",
+    "aliases": [
+      "sportveld"
+    ]
+  },
+  {
+    "word": "vuurtoren",
+    "aliases": []
+  },
+  {
+    "word": "weg",
+    "aliases": [
+      "straat"
+    ]
+  },
+  {
+    "word": "wigwam",
+    "aliases": [
+      "tipi"
+    ]
+  },
+  {
+    "word": "winkel",
+    "aliases": []
+  },
+  {
+    "word": "wolkenkrabber",
+    "aliases": [
+      "flat"
+    ]
+  },
+  {
+    "word": "zandkasteel",
+    "aliases": []
+  },
+  {
+    "word": "ziekenhuis",
+    "aliases": []
+  },
+  {
+    "word": "zwembad",
+    "aliases": []
+  }
+]

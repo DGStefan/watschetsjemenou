@@ -1,0 +1,432 @@
+[
+  {
+    "word": "afzuigkap",
+    "aliases": []
+  },
+  {
+    "word": "bankbiljet",
+    "aliases": []
+  },
+  {
+    "word": "barbecuetang",
+    "aliases": []
+  },
+  {
+    "word": "barkruk",
+    "aliases": []
+  },
+  {
+    "word": "barometer",
+    "aliases": []
+  },
+  {
+    "word": "bezemsteel",
+    "aliases": []
+  },
+  {
+    "word": "bijzettafel",
+    "aliases": []
+  },
+  {
+    "word": "bladblazer",
+    "aliases": []
+  },
+  {
+    "word": "blikopener",
+    "aliases": []
+  },
+  {
+    "word": "boekenkast",
+    "aliases": []
+  },
+  {
+    "word": "boodschappentas",
+    "aliases": []
+  },
+  {
+    "word": "boormachine",
+    "aliases": []
+  },
+  {
+    "word": "brandblusser",
+    "aliases": []
+  },
+  {
+    "word": "brievenbus",
+    "aliases": []
+  },
+  {
+    "word": "broodrooster",
+    "aliases": []
+  },
+  {
+    "word": "broodtrommel",
+    "aliases": []
+  },
+  {
+    "word": "bureaulamp",
+    "aliases": []
+  },
+  {
+    "word": "citruspers",
+    "aliases": []
+  },
+  {
+    "word": "creditcard",
+    "aliases": []
+  },
+  {
+    "word": "deegroller",
+    "aliases": []
+  },
+  {
+    "word": "duimstok",
+    "aliases": [
+      "vouwmeter"
+    ]
+  },
+  {
+    "word": "dunschiller",
+    "aliases": [
+      "aardappelschiller"
+    ]
+  },
+  {
+    "word": "eettafel",
+    "aliases": []
+  },
+  {
+    "word": "eierwekker",
+    "aliases": []
+  },
+  {
+    "word": "erlenmeyer",
+    "aliases": []
+  },
+  {
+    "word": "friteuse",
+    "aliases": []
+  },
+  {
+    "word": "geldkist",
+    "aliases": []
+  },
+  {
+    "word": "gereedschapskist",
+    "aliases": []
+  },
+  {
+    "word": "grasmaaier",
+    "aliases": []
+  },
+  {
+    "word": "hangmat",
+    "aliases": []
+  },
+  {
+    "word": "heggenschaar",
+    "aliases": []
+  },
+  {
+    "word": "kaasschaaf",
+    "aliases": []
+  },
+  {
+    "word": "kandelaar",
+    "aliases": []
+  },
+  {
+    "word": "kapstok",
+    "aliases": []
+  },
+  {
+    "word": "keukenmachine",
+    "aliases": []
+  },
+  {
+    "word": "knoflookpers",
+    "aliases": []
+  },
+  {
+    "word": "koekenpan",
+    "aliases": []
+  },
+  {
+    "word": "koekoeksklok",
+    "aliases": []
+  },
+  {
+    "word": "koffiezetapparaat",
+    "aliases": []
+  },
+  {
+    "word": "kompas",
+    "aliases": []
+  },
+  {
+    "word": "kroonluchter",
+    "aliases": [
+      "luchter"
+    ]
+  },
+  {
+    "word": "kurkentrekker",
+    "aliases": []
+  },
+  {
+    "word": "ladekast",
+    "aliases": [
+      "commode"
+    ]
+  },
+  {
+    "word": "ligstoel",
+    "aliases": []
+  },
+  {
+    "word": "luchtbed",
+    "aliases": []
+  },
+  {
+    "word": "luchtkussen",
+    "aliases": []
+  },
+  {
+    "word": "maatbeker",
+    "aliases": []
+  },
+  {
+    "word": "microscoop",
+    "aliases": []
+  },
+  {
+    "word": "moersleutel",
+    "aliases": []
+  },
+  {
+    "word": "molensteen",
+    "aliases": []
+  },
+  {
+    "word": "nachtkastje",
+    "aliases": []
+  },
+  {
+    "word": "nietmachine",
+    "aliases": []
+  },
+  {
+    "word": "notenkraker",
+    "aliases": []
+  },
+  {
+    "word": "parasol",
+    "aliases": []
+  },
+  {
+    "word": "pepermolen",
+    "aliases": []
+  },
+  {
+    "word": "perforator",
+    "aliases": []
+  },
+  {
+    "word": "puntenslijper",
+    "aliases": []
+  },
+  {
+    "word": "reageerbuis",
+    "aliases": []
+  },
+  {
+    "word": "regenton",
+    "aliases": []
+  },
+  {
+    "word": "rekenmachine",
+    "aliases": []
+  },
+  {
+    "word": "rolkoffer",
+    "aliases": []
+  },
+  {
+    "word": "rolmaat",
+    "aliases": [
+      "meetlint"
+    ]
+  },
+  {
+    "word": "rookmelder",
+    "aliases": []
+  },
+  {
+    "word": "satellietschotel",
+    "aliases": []
+  },
+  {
+    "word": "schatkaart",
+    "aliases": []
+  },
+  {
+    "word": "schommelstoel",
+    "aliases": []
+  },
+  {
+    "word": "slaapzak",
+    "aliases": []
+  },
+  {
+    "word": "slagroomspuit",
+    "aliases": []
+  },
+  {
+    "word": "snijplank",
+    "aliases": []
+  },
+  {
+    "word": "snoeischaar",
+    "aliases": []
+  },
+  {
+    "word": "soldeerbout",
+    "aliases": []
+  },
+  {
+    "word": "spaarvarken",
+    "aliases": []
+  },
+  {
+    "word": "staafmixer",
+    "aliases": [
+      "mixer"
+    ]
+  },
+  {
+    "word": "staande lamp",
+    "aliases": [
+      "schemerlamp"
+    ]
+  },
+  {
+    "word": "stempel",
+    "aliases": []
+  },
+  {
+    "word": "sterrenkijker",
+    "aliases": []
+  },
+  {
+    "word": "stofzuigerslang",
+    "aliases": []
+  },
+  {
+    "word": "strandstoel",
+    "aliases": []
+  },
+  {
+    "word": "strijkijzer",
+    "aliases": []
+  },
+  {
+    "word": "strijkplank",
+    "aliases": []
+  },
+  {
+    "word": "tandartsstoel",
+    "aliases": []
+  },
+  {
+    "word": "theezeefje",
+    "aliases": []
+  },
+  {
+    "word": "thermometer",
+    "aliases": []
+  },
+  {
+    "word": "tuinslang",
+    "aliases": []
+  },
+  {
+    "word": "vaatwasser",
+    "aliases": [
+      "afwasmachine"
+    ]
+  },
+  {
+    "word": "vergiet",
+    "aliases": []
+  },
+  {
+    "word": "vergrootglas",
+    "aliases": []
+  },
+  {
+    "word": "verlengsnoer",
+    "aliases": []
+  },
+  {
+    "word": "verrekijker",
+    "aliases": []
+  },
+  {
+    "word": "wafelijzer",
+    "aliases": []
+  },
+  {
+    "word": "wasdroger",
+    "aliases": [
+      "droogtrommel"
+    ]
+  },
+  {
+    "word": "wasknijper",
+    "aliases": []
+  },
+  {
+    "word": "wasmand",
+    "aliases": []
+  },
+  {
+    "word": "wasrek",
+    "aliases": [
+      "droogrek"
+    ]
+  },
+  {
+    "word": "waterpas",
+    "aliases": []
+  },
+  {
+    "word": "weerhaan",
+    "aliases": []
+  },
+  {
+    "word": "weerstation",
+    "aliases": []
+  },
+  {
+    "word": "wereldbol",
+    "aliases": [
+      "globe"
+    ]
+  },
+  {
+    "word": "windvaan",
+    "aliases": []
+  },
+  {
+    "word": "zaklamp",
+    "aliases": []
+  },
+  {
+    "word": "zonnebrandcrème",
+    "aliases": []
+  },
+  {
+    "word": "zonnewijzer",
+    "aliases": []
+  }
+]

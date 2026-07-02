@@ -1,0 +1,43 @@
+[
+  {
+    "word": "bang",
+    "aliases": [
+      "angstig"
+    ]
+  },
+  {
+    "word": "blij",
+    "aliases": [
+      "vrolijk"
+    ]
+  },
+  {
+    "word": "boos",
+    "aliases": [
+      "kwaad"
+    ]
+  },
+  {
+    "word": "hartje",
+    "aliases": []
+  },
+  {
+    "word": "liefde",
+    "aliases": [
+      "verliefd"
+    ]
+  },
+  {
+    "word": "moe",
+    "aliases": [
+      "moeheid"
+    ]
+  },
+  {
+    "word": "verdrietig",
+    "aliases": [
+      "verdriet",
+      "huilen"
+    ]
+  }
+]

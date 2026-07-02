@@ -7,6 +7,12 @@ export type PhaseType = "draw" | "guess" | "relay";
 /** Moeilijkheidsgraad: bepaalt uit welke woordenlijst er getrokken wordt. */
 export type Difficulty = "eenvoudig" | "geavanceerd";
 
+/**
+ * Taal van de woordenlijsten. Nu alleen Nederlands; de datastructuur
+ * (data/<taal>/<niveau>/<categorie>.json) is al voorbereid op meer talen.
+ */
+export type Language = "nl";
+
 export interface StartPayload {
   difficulty: Difficulty;
 }

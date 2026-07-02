@@ -1,0 +1,281 @@
+[
+  {
+    "word": "ambulance",
+    "aliases": []
+  },
+  {
+    "word": "auto",
+    "aliases": [
+      "wagen"
+    ]
+  },
+  {
+    "word": "bakfiets",
+    "aliases": []
+  },
+  {
+    "word": "bestelbus",
+    "aliases": [
+      "bestelwagen"
+    ]
+  },
+  {
+    "word": "boot",
+    "aliases": [
+      "schip"
+    ]
+  },
+  {
+    "word": "brandweerauto",
+    "aliases": []
+  },
+  {
+    "word": "brommer",
+    "aliases": [
+      "bromfiets"
+    ]
+  },
+  {
+    "word": "bulldozer",
+    "aliases": []
+  },
+  {
+    "word": "bus",
+    "aliases": []
+  },
+  {
+    "word": "cabrio",
+    "aliases": [
+      "cabriolet"
+    ]
+  },
+  {
+    "word": "camper",
+    "aliases": []
+  },
+  {
+    "word": "caravan",
+    "aliases": []
+  },
+  {
+    "word": "driewieler",
+    "aliases": []
+  },
+  {
+    "word": "eenwieler",
+    "aliases": []
+  },
+  {
+    "word": "fiets",
+    "aliases": [
+      "rijwiel"
+    ]
+  },
+  {
+    "word": "graafmachine",
+    "aliases": []
+  },
+  {
+    "word": "helikopter",
+    "aliases": []
+  },
+  {
+    "word": "jacht",
+    "aliases": []
+  },
+  {
+    "word": "kajak",
+    "aliases": []
+  },
+  {
+    "word": "kano",
+    "aliases": []
+  },
+  {
+    "word": "kinderwagen",
+    "aliases": []
+  },
+  {
+    "word": "koets",
+    "aliases": []
+  },
+  {
+    "word": "kruiwagen",
+    "aliases": []
+  },
+  {
+    "word": "locomotief",
+    "aliases": []
+  },
+  {
+    "word": "luchtballon",
+    "aliases": [
+      "ballon"
+    ]
+  },
+  {
+    "word": "metro",
+    "aliases": []
+  },
+  {
+    "word": "motor",
+    "aliases": [
+      "motorfiets"
+    ]
+  },
+  {
+    "word": "mountainbike",
+    "aliases": [
+      "bergfiets"
+    ]
+  },
+  {
+    "word": "onderzeeer",
+    "aliases": []
+  },
+  {
+    "word": "politieauto",
+    "aliases": []
+  },
+  {
+    "word": "quad",
+    "aliases": []
+  },
+  {
+    "word": "raceauto",
+    "aliases": []
+  },
+  {
+    "word": "racefiets",
+    "aliases": []
+  },
+  {
+    "word": "raket",
+    "aliases": []
+  },
+  {
+    "word": "roeiboot",
+    "aliases": [
+      "roeibootje"
+    ]
+  },
+  {
+    "word": "rolstoel",
+    "aliases": []
+  },
+  {
+    "word": "ruimteschip",
+    "aliases": []
+  },
+  {
+    "word": "scooter",
+    "aliases": []
+  },
+  {
+    "word": "skateboard",
+    "aliases": []
+  },
+  {
+    "word": "slee",
+    "aliases": []
+  },
+  {
+    "word": "speedboot",
+    "aliases": [
+      "motorboot"
+    ]
+  },
+  {
+    "word": "sportauto",
+    "aliases": []
+  },
+  {
+    "word": "step",
+    "aliases": []
+  },
+  {
+    "word": "stoomtrein",
+    "aliases": [
+      "stoomlocomotief"
+    ]
+  },
+  {
+    "word": "straaljager",
+    "aliases": [
+      "gevechtsvliegtuig"
+    ]
+  },
+  {
+    "word": "tandem",
+    "aliases": []
+  },
+  {
+    "word": "tank",
+    "aliases": [
+      "legertank"
+    ]
+  },
+  {
+    "word": "taxi",
+    "aliases": []
+  },
+  {
+    "word": "tractor",
+    "aliases": [
+      "trekker"
+    ]
+  },
+  {
+    "word": "tram",
+    "aliases": []
+  },
+  {
+    "word": "trein",
+    "aliases": []
+  },
+  {
+    "word": "veerboot",
+    "aliases": [
+      "veerpont",
+      "pont"
+    ]
+  },
+  {
+    "word": "vliegtuig",
+    "aliases": []
+  },
+  {
+    "word": "vlot",
+    "aliases": []
+  },
+  {
+    "word": "vrachtwagen",
+    "aliases": [
+      "truck"
+    ]
+  },
+  {
+    "word": "vuilniswagen",
+    "aliases": [
+      "vuilnisauto"
+    ]
+  },
+  {
+    "word": "wagen",
+    "aliases": []
+  },
+  {
+    "word": "wagon",
+    "aliases": []
+  },
+  {
+    "word": "zeilboot",
+    "aliases": []
+  },
+  {
+    "word": "zeppelin",
+    "aliases": [
+      "luchtschip"
+    ]
+  }
+]

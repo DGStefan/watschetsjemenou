@@ -1,0 +1,590 @@
+[
+  {
+    "word": "aansteker",
+    "aliases": []
+  },
+  {
+    "word": "anker",
+    "aliases": []
+  },
+  {
+    "word": "bad",
+    "aliases": [
+      "badkuip"
+    ]
+  },
+  {
+    "word": "bank",
+    "aliases": [
+      "sofa"
+    ]
+  },
+  {
+    "word": "batterij",
+    "aliases": []
+  },
+  {
+    "word": "bed",
+    "aliases": []
+  },
+  {
+    "word": "beker",
+    "aliases": [
+      "mok"
+    ]
+  },
+  {
+    "word": "bezem",
+    "aliases": []
+  },
+  {
+    "word": "biljet",
+    "aliases": []
+  },
+  {
+    "word": "bloempot",
+    "aliases": []
+  },
+  {
+    "word": "boek",
+    "aliases": []
+  },
+  {
+    "word": "bom",
+    "aliases": []
+  },
+  {
+    "word": "boor",
+    "aliases": []
+  },
+  {
+    "word": "bord",
+    "aliases": []
+  },
+  {
+    "word": "brief",
+    "aliases": []
+  },
+  {
+    "word": "bureau",
+    "aliases": []
+  },
+  {
+    "word": "camera",
+    "aliases": [
+      "fototoestel"
+    ]
+  },
+  {
+    "word": "computer",
+    "aliases": [
+      "pc"
+    ]
+  },
+  {
+    "word": "deken",
+    "aliases": []
+  },
+  {
+    "word": "deksel",
+    "aliases": []
+  },
+  {
+    "word": "deur",
+    "aliases": []
+  },
+  {
+    "word": "deurbel",
+    "aliases": []
+  },
+  {
+    "word": "deurklink",
+    "aliases": []
+  },
+  {
+    "word": "diamant",
+    "aliases": [
+      "edelsteen"
+    ]
+  },
+  {
+    "word": "dienblad",
+    "aliases": []
+  },
+  {
+    "word": "doos",
+    "aliases": []
+  },
+  {
+    "word": "douche",
+    "aliases": []
+  },
+  {
+    "word": "dweil",
+    "aliases": []
+  },
+  {
+    "word": "dynamiet",
+    "aliases": []
+  },
+  {
+    "word": "emmer",
+    "aliases": []
+  },
+  {
+    "word": "envelop",
+    "aliases": []
+  },
+  {
+    "word": "fles",
+    "aliases": []
+  },
+  {
+    "word": "fototoestel",
+    "aliases": []
+  },
+  {
+    "word": "garde",
+    "aliases": []
+  },
+  {
+    "word": "geld",
+    "aliases": [
+      "munt"
+    ]
+  },
+  {
+    "word": "gieter",
+    "aliases": []
+  },
+  {
+    "word": "glas",
+    "aliases": []
+  },
+  {
+    "word": "gloeilamp",
+    "aliases": []
+  },
+  {
+    "word": "gordijn",
+    "aliases": []
+  },
+  {
+    "word": "gum",
+    "aliases": []
+  },
+  {
+    "word": "haard",
+    "aliases": [
+      "open haard"
+    ]
+  },
+  {
+    "word": "hamer",
+    "aliases": []
+  },
+  {
+    "word": "handdoek",
+    "aliases": []
+  },
+  {
+    "word": "hangslot",
+    "aliases": [
+      "slot"
+    ]
+  },
+  {
+    "word": "hark",
+    "aliases": []
+  },
+  {
+    "word": "kaars",
+    "aliases": []
+  },
+  {
+    "word": "kaart",
+    "aliases": [
+      "landkaart"
+    ]
+  },
+  {
+    "word": "kachel",
+    "aliases": []
+  },
+  {
+    "word": "kam",
+    "aliases": []
+  },
+  {
+    "word": "kan",
+    "aliases": []
+  },
+  {
+    "word": "kast",
+    "aliases": []
+  },
+  {
+    "word": "klok",
+    "aliases": []
+  },
+  {
+    "word": "koelkast",
+    "aliases": [
+      "ijskast"
+    ]
+  },
+  {
+    "word": "koffer",
+    "aliases": []
+  },
+  {
+    "word": "kom",
+    "aliases": []
+  },
+  {
+    "word": "kompas",
+    "aliases": []
+  },
+  {
+    "word": "kopje",
+    "aliases": []
+  },
+  {
+    "word": "koptelefoon",
+    "aliases": []
+  },
+  {
+    "word": "kraan",
+    "aliases": [
+      "hijskraan"
+    ]
+  },
+  {
+    "word": "krant",
+    "aliases": []
+  },
+  {
+    "word": "kruk",
+    "aliases": []
+  },
+  {
+    "word": "kussen",
+    "aliases": []
+  },
+  {
+    "word": "kwast",
+    "aliases": []
+  },
+  {
+    "word": "ladder",
+    "aliases": []
+  },
+  {
+    "word": "lade",
+    "aliases": [
+      "la"
+    ]
+  },
+  {
+    "word": "lamp",
+    "aliases": []
+  },
+  {
+    "word": "laptop",
+    "aliases": []
+  },
+  {
+    "word": "lepel",
+    "aliases": []
+  },
+  {
+    "word": "lijm",
+    "aliases": []
+  },
+  {
+    "word": "lucifer",
+    "aliases": []
+  },
+  {
+    "word": "magneet",
+    "aliases": []
+  },
+  {
+    "word": "magnetron",
+    "aliases": []
+  },
+  {
+    "word": "mand",
+    "aliases": []
+  },
+  {
+    "word": "mes",
+    "aliases": []
+  },
+  {
+    "word": "microfoon",
+    "aliases": []
+  },
+  {
+    "word": "oven",
+    "aliases": []
+  },
+  {
+    "word": "pan",
+    "aliases": []
+  },
+  {
+    "word": "paraplu",
+    "aliases": []
+  },
+  {
+    "word": "parel",
+    "aliases": []
+  },
+  {
+    "word": "pen",
+    "aliases": []
+  },
+  {
+    "word": "pijl",
+    "aliases": []
+  },
+  {
+    "word": "plank",
+    "aliases": []
+  },
+  {
+    "word": "pollepel",
+    "aliases": []
+  },
+  {
+    "word": "postzegel",
+    "aliases": []
+  },
+  {
+    "word": "pot",
+    "aliases": []
+  },
+  {
+    "word": "potlood",
+    "aliases": []
+  },
+  {
+    "word": "prullenbak",
+    "aliases": [
+      "vuilnisbak"
+    ]
+  },
+  {
+    "word": "radio",
+    "aliases": []
+  },
+  {
+    "word": "rietje",
+    "aliases": []
+  },
+  {
+    "word": "schaar",
+    "aliases": []
+  },
+  {
+    "word": "schatkist",
+    "aliases": [
+      "schat"
+    ]
+  },
+  {
+    "word": "schep",
+    "aliases": []
+  },
+  {
+    "word": "schilderij",
+    "aliases": []
+  },
+  {
+    "word": "schroef",
+    "aliases": []
+  },
+  {
+    "word": "schroevendraaier",
+    "aliases": []
+  },
+  {
+    "word": "servet",
+    "aliases": []
+  },
+  {
+    "word": "sleutel",
+    "aliases": []
+  },
+  {
+    "word": "sleutelbos",
+    "aliases": []
+  },
+  {
+    "word": "spatel",
+    "aliases": []
+  },
+  {
+    "word": "spiegel",
+    "aliases": []
+  },
+  {
+    "word": "spijker",
+    "aliases": []
+  },
+  {
+    "word": "spons",
+    "aliases": []
+  },
+  {
+    "word": "stekker",
+    "aliases": []
+  },
+  {
+    "word": "stoel",
+    "aliases": []
+  },
+  {
+    "word": "stofzuiger",
+    "aliases": []
+  },
+  {
+    "word": "stopcontact",
+    "aliases": []
+  },
+  {
+    "word": "tafel",
+    "aliases": []
+  },
+  {
+    "word": "tandenborstel",
+    "aliases": []
+  },
+  {
+    "word": "tang",
+    "aliases": []
+  },
+  {
+    "word": "tapijt",
+    "aliases": [
+      "kleed"
+    ]
+  },
+  {
+    "word": "telefoon",
+    "aliases": [
+      "mobiel"
+    ]
+  },
+  {
+    "word": "televisie",
+    "aliases": [
+      "tv"
+    ]
+  },
+  {
+    "word": "tent",
+    "aliases": []
+  },
+  {
+    "word": "theepot",
+    "aliases": []
+  },
+  {
+    "word": "thermometer",
+    "aliases": []
+  },
+  {
+    "word": "ticket",
+    "aliases": [
+      "kaartje"
+    ]
+  },
+  {
+    "word": "toilet",
+    "aliases": [
+      "wc"
+    ]
+  },
+  {
+    "word": "touw",
+    "aliases": []
+  },
+  {
+    "word": "vaas",
+    "aliases": []
+  },
+  {
+    "word": "veer",
+    "aliases": []
+  },
+  {
+    "word": "ventilator",
+    "aliases": []
+  },
+  {
+    "word": "verf",
+    "aliases": []
+  },
+  {
+    "word": "vergrootglas",
+    "aliases": []
+  },
+  {
+    "word": "verrekijker",
+    "aliases": []
+  },
+  {
+    "word": "vlag",
+    "aliases": []
+  },
+  {
+    "word": "vork",
+    "aliases": []
+  },
+  {
+    "word": "wasmachine",
+    "aliases": []
+  },
+  {
+    "word": "wastafel",
+    "aliases": [
+      "gootsteen"
+    ]
+  },
+  {
+    "word": "waterkoker",
+    "aliases": []
+  },
+  {
+    "word": "weegschaal",
+    "aliases": []
+  },
+  {
+    "word": "wekker",
+    "aliases": []
+  },
+  {
+    "word": "wereldbol",
+    "aliases": [
+      "globe"
+    ]
+  },
+  {
+    "word": "wieg",
+    "aliases": []
+  },
+  {
+    "word": "zaag",
+    "aliases": []
+  },
+  {
+    "word": "zandloper",
+    "aliases": []
+  },
+  {
+    "word": "zeep",
+    "aliases": []
+  }
+]

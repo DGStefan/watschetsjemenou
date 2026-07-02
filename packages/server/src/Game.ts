@@ -1,5 +1,4 @@
 import type {
-  Difficulty,
   EntryType,
   MatchResult,
   PhasePayload,
@@ -65,7 +64,6 @@ export class Game {
   constructor(
     private readonly players: Player[],
     private readonly emitter: GameEmitter,
-    private readonly difficulty: Difficulty,
     // Wordt aangeroepen als het potje klaar is; de Room telt de punten
     // op bij het lobby-totaal en stuurt de onthulling.
     private readonly onComplete: (
@@ -74,8 +72,11 @@ export class Game {
     ) => void,
   ) {}
 
-  start(): void {
-    const words = dictionary.pickWords(this.difficulty, this.players.length);
+  /**
+   * Start het potje met de woorden die de Room uit het lobby-deck heeft
+   * getrokken (één per speler; `words[i]` hoort bij `players[i]`).
+   */
+  start(words: string[]): void {
     this.chains = this.players.map((owner, i) => ({
       owner,
       entries: [{ type: "word", value: words[i], by: null }],

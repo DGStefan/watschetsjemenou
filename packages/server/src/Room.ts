@@ -6,6 +6,8 @@ import type {
 } from "@krabbelketen/shared";
 import { Player } from "./Player";
 import { Game, type GameEmitter } from "./Game";
+import { Deck } from "./Deck";
+import { dictionary } from "./Dictionary";
 import { config } from "./config";
 
 export type RoomStatus = "waiting" | "playing" | "reveal";
@@ -19,6 +21,10 @@ export class Room {
   private totals = new Map<string, number>();
   // Gedeelde moeilijkheid voor de hele lobby (blijft tussen potjes onthouden).
   private difficulty: Difficulty = "eenvoudig";
+  // Eén "stapel" per niveau: zorgt dat een woord binnen deze lobby pas terugkomt
+  // als de hele lijst van dat niveau een keer geweest is. Leeft alleen in het
+  // geheugen van de room en verdwijnt bij het opruimen.
+  private readonly decks = new Map<Difficulty, Deck>();
   // Laatste onthulling, bewaard zolang status "reveal" is, zodat een speler die
   // op dat scherm refresht het terugkrijgt.
   private lastReveal: RevealPayload | null = null;
@@ -36,6 +42,16 @@ export class Room {
   setDifficulty(difficulty: Difficulty): void {
     if (this.status !== "waiting") return;
     this.difficulty = difficulty;
+  }
+
+  /** De stapel van een niveau; lui aangemaakt en daarna hergebruikt. */
+  private deckFor(difficulty: Difficulty): Deck {
+    let deck = this.decks.get(difficulty);
+    if (!deck) {
+      deck = new Deck(dictionary.poolFor(difficulty));
+      this.decks.set(difficulty, deck);
+    }
+    return deck;
   }
 
   addPlayer(id: string, socketId: string, name: string, avatar: string): Player {
@@ -100,7 +116,7 @@ export class Room {
     this.status = "playing";
     this.lastReveal = null;
     // Snapshot van de huidige spelers; de Game houdt deze referenties vast.
-    this.game = new Game([...this.players], emitter, this.difficulty, (chains, roundScores) => {
+    this.game = new Game([...this.players], emitter, (chains, roundScores) => {
       // Tel de ronde-punten op bij het lobby-totaal.
       for (const rs of roundScores) {
         this.totals.set(rs.id, (this.totals.get(rs.id) ?? 0) + rs.points);
@@ -117,7 +133,15 @@ export class Room {
       this.lastReveal = { chains, scores };
       emitter.sendReveal(chains, scores);
     });
-    this.game.start();
+    // Trek per speler een woord uit de stapel van het gekozen niveau.
+    const words = this.deckFor(this.difficulty).draw(this.players.length);
+    if (words.length < this.players.length) {
+      console.warn(
+        `[room ${this.code}] pool "${this.difficulty}" heeft te weinig woorden ` +
+          `(${words.length}) voor ${this.players.length} spelers.`,
+      );
+    }
+    this.game.start(words);
   }
 
   submit(id: string, value: string): void {
