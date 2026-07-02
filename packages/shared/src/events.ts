@@ -32,4 +32,6 @@ export interface ClientToServerEvents {
   start: () => void;
   submit: (payload: SubmitPayload) => void;
   newgame: () => void;
+  // Verlaat de huidige room bewust (terug naar het beginscherm).
+  leave: () => void;
 }

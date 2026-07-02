@@ -165,6 +165,31 @@ export class SocketServer {
       this.io.to(code).emit("waiting", r.waitingPayload());
     });
 
+    // Bewust verlaten (knop): anders dan een disconnect halen we de speler echt
+    // weg en verwachten we hem niet terug — de client wist ook zijn opgeslagen
+    // sessie, dus een refresh joint niet opnieuw.
+    socket.on("leave", () => {
+      const code = socket.data.room;
+      socket.data.room = undefined;
+      if (!code) return;
+      socket.leave(code);
+      const r = this.rooms.get(code);
+      if (!r) return;
+
+      const player = r.getPlayerBySocket(socket.id);
+      if (player) r.removePlayer(player.id);
+
+      if (r.isEmpty) {
+        // Niemand meer over: stop een eventueel lopend potje en ruim de room op.
+        r.dispose();
+        this.rooms.delete(code);
+      } else if (r.status === "waiting") {
+        // Alleen in de wachtkamer werken we de lijst bij; tijdens een potje of op
+        // de onthulling laten we de anderen met rust (het snapshot loopt door).
+        this.io.to(code).emit("waiting", r.waitingPayload());
+      }
+    });
+
     socket.on("disconnect", () => {
       const code = socket.data.room;
       if (!code) return;

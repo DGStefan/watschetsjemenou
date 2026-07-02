@@ -1,7 +1,13 @@
 import type { Difficulty } from "@krabbelketen/shared";
 import { socket } from "./socket";
 import { game } from "./stores";
-import { clientId, saveSession, loadSession, type LastSession } from "./identity";
+import {
+  clientId,
+  saveSession,
+  loadSession,
+  clearSession,
+  type LastSession,
+} from "./identity";
 
 // Onthoud de laatste join, zodat we na een (her)verbinding automatisch opnieuw
 // joinen. Bij een verse paginalading (na een refresh) komt dit uit localStorage,
@@ -54,5 +60,13 @@ export const actions = {
   backToLobby: () => {
     socket.emit("newgame");
     game.update((s) => ({ ...s, screen: "waiting" }));
+  },
+  // De room bewust verlaten: vertel het de server, wis de opgeslagen sessie (zodat
+  // een refresh niet opnieuw joint) en ga terug naar het beginscherm.
+  leave: () => {
+    socket.emit("leave");
+    lastJoin = null;
+    clearSession();
+    game.set({ screen: "lobby", room: "", info: "" });
   },
 };

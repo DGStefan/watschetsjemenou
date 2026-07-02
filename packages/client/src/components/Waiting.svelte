@@ -56,9 +56,12 @@
     {/if}
   </p>
 
-  <button class="cta" on:click={actions.start} disabled={!waiting?.canStart}>
-    Start het potje
-  </button>
+  <div class="actions">
+    <button class="cta" on:click={actions.start} disabled={!waiting?.canStart}>
+      Start het potje
+    </button>
+    <button class="leave" on:click={actions.leave}>Verlaten</button>
+  </div>
 </div>
 
 <p class="room-hint">spelcode <strong>{$game.room}</strong></p>
@@ -134,6 +137,21 @@
     color: #51607d;
     margin: 8px 0 0;
     min-height: 1.2em;
+  }
+  .actions {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .actions .cta {
+    flex: 1;
+  }
+  .leave {
+    margin-top: 16px;
+    background: #fff;
+    color: #b23b3b;
+    box-shadow: 3px 3px 0 #b23b3b;
+    white-space: nowrap;
   }
   .room-hint {
     text-align: center;
