@@ -4,6 +4,12 @@
   "private": true,
   "type": "module",
   "description": "Doorgeef-tekenspel (teken -> raad -> teken). TypeScript monorepo: shared + server + Svelte-client.",
+  "license": "MIT",
+  "author": "Stefan <stefan@codepress.nl>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DGStefan/watschetsjemenou.git"
+  },
   "workspaces": [
     "packages/shared",
     "packages/server",

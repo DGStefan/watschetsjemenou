@@ -127,8 +127,8 @@ Er ligt een `Dockerfile` die alles in één container bouwt en draait.
 4. Zet **Ports Exposes** op `3000`.
 5. (Optioneel) onder **Environment Variables** bijv. `MIN_PLAYERS=4`,
    `DRAW_SECONDS=30`.
-6. Deploy. Voeg daarna onder **Domains** je domein toe (bijv.
-   `spel.vddg.eu`); Coolify regelt HTTPS.
+6. Deploy. Voeg daarna onder **Domains** je eigen domein toe; Coolify (of een
+   reverse proxy / Cloudflare Tunnel) regelt de HTTPS.
 
 Houd het op **één instance** (niet schalen): Socket.IO heeft bij meerdere
 instances "sticky sessions" nodig, en dat wil je nu niet.
@@ -190,3 +190,10 @@ de laatste ronde erbij (in het groen, bijv. `16 pt +8`).
 - Netter omgaan met spelers die midden in een potje wegvallen (nu blijft hun
   plek leeg en worden ontbrekende inzendingen automatisch opgevuld).
 - Een "leukste afdwaling"-stemming op het onthullingsscherm.
+
+## Licentie
+
+MIT — zie [`LICENSE`](./LICENSE). Vrij te gebruiken, aan te passen en te forken.
+
+Dit is een eigen implementatie van het klassieke doorgeef-tekenprincipe en staat
+los van bestaande commerciële spellen.

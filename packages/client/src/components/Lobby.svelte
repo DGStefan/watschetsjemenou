@@ -11,8 +11,7 @@
 
 <div class="card">
   <p class="status">
-    Vul je naam in, kies een avatar en een spelcode. Testen? Open deze pagina ook
-    in een incognito-venster met dezelfde spelcode.
+    Vul je naam in, kies een avatar en een spelcode.
   </p>
 
   <label for="name">Jouw naam</label>
