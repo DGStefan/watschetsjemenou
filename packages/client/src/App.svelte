@@ -7,6 +7,7 @@
   import RelayPhase from "./components/RelayPhase.svelte";
   import Passing from "./components/Passing.svelte";
   import Reveal from "./components/Reveal.svelte";
+  import VersionFooter from "./components/VersionFooter.svelte";
 </script>
 
 <h1>Krabbel<span class="hi">keten</span> ✏️</h1>
@@ -30,3 +31,5 @@
 {:else if $game.screen === "reveal"}
   <Reveal />
 {/if}
+
+<VersionFooter />

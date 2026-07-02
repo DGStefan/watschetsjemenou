@@ -15,6 +15,12 @@ RUN npm ci
 
 # Broncode kopiëren en alles bouwen (client via Vite, server via tsup).
 COPY . .
+
+# Commit-hash die Coolify meegeeft; wordt door Vite in de client-bundle gebakken.
+# ARG moet gedeclareerd zijn, anders negeert Docker de build-arg.
+ARG SOURCE_COMMIT=""
+ENV SOURCE_COMMIT=$SOURCE_COMMIT
+
 RUN npm run build
 
 ENV NODE_ENV=production
